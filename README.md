@@ -108,7 +108,7 @@ erDiagram
     ACTIONS ||--o{ ACTION_HISTORY : records
 ```
 
-`db.py` contains the actual table definitions, primary keys, foreign keys, checks, and unique constraints. This Mermaid diagram can be rendered in GitHub for the report. The full schema is created automatically when the app starts.
+`db.py` contains the actual table definitions, primary keys, foreign keys, checks, and unique constraints. Its `Database` class encapsulates each request's connection, schema setup, queries, and cleanup; the services use the shared query helpers. This Mermaid diagram can be rendered in GitHub for the report. The full schema is created automatically when the app starts.
 
 ## Evidence and report
 

@@ -27,7 +27,8 @@ def register(app):
     @route(H + '/assets/search', methods=['GET'])
     @auth(ADMIN, ANALYST, AUDITOR)
     def assets_search():
-        return search('assets', ('name', 'type', 'ip_address', 'department', 'criticality'))
+        return search('assets', ('name', 'type', 'ip_address', 'department', 'criticality'),
+                      exact=('type', 'ip_address', 'criticality'))
 
     @route(H + '/assets/<int:id>', methods=['GET'])
     @auth(ADMIN, ANALYST, AUDITOR)

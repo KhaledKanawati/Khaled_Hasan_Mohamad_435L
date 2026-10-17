@@ -35,7 +35,8 @@ def register(app):
     @route(K + '/vulnerabilities/search', methods=['GET'])
     @auth(ADMIN, ANALYST, AUDITOR)
     def vulnerability_search():
-        return search('vulnerabilities', ('cve', 'severity', 'asset_id', 'status'))
+        return search('vulnerabilities', ('cve', 'severity', 'asset_id', 'status'),
+                      exact=('severity', 'asset_id', 'status'))
 
     @route(K + '/vulnerabilities/<int:id>', methods=['GET'])
     @auth(ADMIN, ANALYST, AUDITOR)

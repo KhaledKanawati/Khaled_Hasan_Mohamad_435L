@@ -39,7 +39,7 @@ def register(app):
     @route(K + '/threats/search', methods=['GET'])
     @auth(ADMIN, ANALYST, AUDITOR)
     def threats_search():
-        return search('threats', ('type', 'value', 'severity', 'source'))
+        return search('threats', ('type', 'value', 'severity', 'source'), exact=('type', 'severity'))
 
     @route(K + '/threats/<int:id>', methods=['GET'])
     @auth(ADMIN, ANALYST, AUDITOR)

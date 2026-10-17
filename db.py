@@ -72,11 +72,38 @@ CREATE TABLE IF NOT EXISTS action_history (
 """
 
 
+class Database:
+    def __init__(self, path):
+        self._conn = sqlite3.connect(path)
+        self._conn.row_factory = sqlite3.Row
+        self._conn.execute('PRAGMA foreign_keys = ON')
+
+    def initialize(self):
+        self._conn.executescript(SCHEMA)
+        if 'actor_name' not in [row['name'] for row in self._conn.execute('PRAGMA table_info(logs)')]:
+            self._conn.execute('ALTER TABLE logs ADD COLUMN actor_name TEXT')
+            self._conn.execute('UPDATE logs SET actor_name=(SELECT username FROM users WHERE users.id=logs.user_id)')
+        self._conn.commit()
+
+    def one(self, sql, args=()):
+        row = self._conn.execute(sql, args).fetchone()
+        return dict(row) if row else None
+
+    def many(self, sql, args=()):
+        return [dict(row) for row in self._conn.execute(sql, args).fetchall()]
+
+    def run(self, sql, args=()):
+        cur = self._conn.execute(sql, args)
+        self._conn.commit()
+        return cur.lastrowid
+
+    def close(self):
+        self._conn.close()
+
+
 def get_db():
     if 'db' not in g:
-        g.db = sqlite3.connect(current_app.config['DATABASE'])
-        g.db.row_factory = sqlite3.Row
-        g.db.execute('PRAGMA foreign_keys = ON')
+        g.db = Database(current_app.config['DATABASE'])
     return g.db
 
 
@@ -87,25 +114,16 @@ def close_db(_=None):
 
 
 def init_db():
-    db = get_db()
-    db.executescript(SCHEMA)
-    if 'actor_name' not in [row['name'] for row in db.execute('PRAGMA table_info(logs)')]:
-        db.execute('ALTER TABLE logs ADD COLUMN actor_name TEXT')
-        db.execute('UPDATE logs SET actor_name=(SELECT username FROM users WHERE users.id=logs.user_id)')
-    db.commit()
+    get_db().initialize()
 
 
 def one(sql, args=()):
-    row = get_db().execute(sql, args).fetchone()
-    return dict(row) if row else None
+    return get_db().one(sql, args)
 
 
 def many(sql, args=()):
-    return [dict(row) for row in get_db().execute(sql, args).fetchall()]
+    return get_db().many(sql, args)
 
 
 def run(sql, args=()):
-    db = get_db()
-    cur = db.execute(sql, args)
-    db.commit()
-    return cur.lastrowid
+    return get_db().run(sql, args)

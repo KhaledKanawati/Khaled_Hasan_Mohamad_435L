@@ -37,6 +37,13 @@ samples = {
 ids = {'users':'userId','assets':'assetId','incidents':'incidentId','threats':'threatId',
        'logs':'logId','vulnerabilities':'vulnerabilityId','notifications':'notificationId',
        'playbooks':'playbookId','actions':'actionId'}
+queries = {
+    'assets_search': '?name=web&type=Server&ip_address=10.0.0.10&department=IT&criticality=High',
+    'threats_search': '?type=Domain&severity=High&source=SOC',
+    'logs_search': '?user_id={{adminId}}&severity=Information&service=reports',
+    'vulnerability_search': '?cve=CVE-2025-1234&severity=High&asset_id={{assetId}}&status=Open',
+    'notifications_search': '?user_id={{employeeId}}&type=Security%20Alert&severity=Medium&status=Unread',
+}
 
 
 def req(name, method, path, data=None, token='adminToken', save=None, note=None, expected=None):
@@ -72,6 +79,7 @@ def main():
         user_var = 'adminId' if group == 'logs' else ('employeeId' if group == 'notifications' else 'userId')
         path = path.replace('<int:user_id>', '{{' + user_var + '}}')
         path = path.replace('<int:id>', '{{' + ids.get(path.split('/')[2], 'actionId') + '}}')
+        path += queries.get(rule.endpoint, '')
         for method in sorted(rule.methods & {'GET','POST','PUT','DELETE'}):
             name = rule.endpoint.replace('_', ' ').title()
             token = None if rule.endpoint in ('register_user','login') else 'adminToken'
@@ -158,14 +166,20 @@ def main():
              '', 'Send `Authorization: Bearer <token>` for protected calls. Login returns the token. JSON bodies use `Content-Type: application/json`.',
              '', 'Responses are JSON objects for one record or a report, and JSON arrays for lists and searches. New records return HTTP 201.',
              'Errors return `{"status":"error","message":"..."}` with HTTP 400 (validation), 401 (authentication), 403 (permission), 404 (missing record), or 409 (duplicate/relationship conflict).',
-             'The collection contains an editable example body for every POST and PUT request.', '']
+             'Requests that accept JSON bodies include editable examples in the collection.',
+             'Search filters combine with AND. IDs, IP addresses, types, severities, statuses, and criticality use exact matches. Other text filters support partial matches; `created_at` accepts a date or timestamp fragment.', '']
+    search_fields = {'Assets Search': 'name, type, ip_address, department, criticality',
+                     'Threats Search': 'type, value, severity, source',
+                     'Logs Search': 'user_id, created_at, action, severity, service',
+                     'Vulnerability Search': 'cve, severity, asset_id, status',
+                     'Notifications Search': 'user_id, type, severity, status'}
     for folder in folders[1:10]:
         lines += ['## ' + folder['name'], '', '| API | Method | Endpoint | Request fields | Success |',
                   '| --- | --- | --- | --- | --- |']
         key = groups[int(folder['name'].split()[0]) - 1][2]
         for item in docs_map[key]:
             r = item['request']
-            fields = ', '.join(json.loads(r['body']['raw'])) if 'body' in r else 'Query parameters or path ID, if present'
+            fields = ', '.join(json.loads(r['body']['raw'])) if 'body' in r else search_fields.get(item['name'], 'Path ID, if present')
             success = '201 record' if r['method'] == 'POST' and item['name'] != 'Login' else ('200 message' if r['method'] == 'DELETE' else '200 JSON')
             lines.append(f'| {item["name"]} | {r["method"]} | `{r["url"].replace("{{baseUrl}}", "")}` | {fields} | {success} |')
         lines.append('')

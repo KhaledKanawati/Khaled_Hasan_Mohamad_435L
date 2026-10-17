@@ -27,7 +27,8 @@ def register(app):
     @route(H + '/logs/search', methods=['GET'])
     @auth(ADMIN, ANALYST, AUDITOR)
     def logs_search():
-        return search('logs', ('user_id', 'created_at', 'action', 'severity', 'service'))
+        return search('logs', ('user_id', 'created_at', 'action', 'severity', 'service'),
+                      exact=('user_id', 'severity'))
 
     @route(H + '/logs/user/<int:user_id>', methods=['GET'])
     @auth(ADMIN, AUDITOR)

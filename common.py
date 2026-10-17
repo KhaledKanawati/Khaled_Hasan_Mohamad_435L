@@ -152,13 +152,17 @@ def delete(table, id):
     return {'message': f'{table[:-1].capitalize()} deleted'}
 
 
-def search(table, fields):
+def search(table, fields, exact=()):
     clauses, values = [], []
     for field in fields:
         value = request.args.get(field)
         if value:
-            clauses.append(f'CAST({field} AS TEXT) LIKE ?')
-            values.append('%' + value + '%')
+            if field in exact:
+                clauses.append(f'{field}=?')
+                values.append(positive_int(value, field) if field in ID_FIELDS else value)
+            else:
+                clauses.append(f'CAST({field} AS TEXT) LIKE ?')
+                values.append('%' + value + '%')
     where = ' WHERE ' + ' AND '.join(clauses) if clauses else ''
     return many(f'SELECT * FROM {table}{where} ORDER BY id', values)
 

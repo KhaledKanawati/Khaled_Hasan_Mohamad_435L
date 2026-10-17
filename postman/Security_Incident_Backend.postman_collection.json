@@ -524,8 +524,8 @@
                 "value": "Bearer {{adminToken}}"
               }
             ],
-            "url": "{{baseUrl}}/Hasan_Zuelghina/assets/search",
-            "description": "GET /Hasan_Zuelghina/assets/search. Uses the local SQLite database; errors return status and message."
+            "url": "{{baseUrl}}/Hasan_Zuelghina/assets/search?name=web&type=Server&ip_address=10.0.0.10&department=IT&criticality=High",
+            "description": "GET /Hasan_Zuelghina/assets/search?name=web&type=Server&ip_address=10.0.0.10&department=IT&criticality=High. Uses the local SQLite database; errors return status and message."
           },
           "event": [
             {
@@ -942,8 +942,8 @@
                 "value": "Bearer {{adminToken}}"
               }
             ],
-            "url": "{{baseUrl}}/Khaled_Kanawati/threats/search",
-            "description": "GET /Khaled_Kanawati/threats/search. Uses the local SQLite database; errors return status and message."
+            "url": "{{baseUrl}}/Khaled_Kanawati/threats/search?type=Domain&severity=High&source=SOC",
+            "description": "GET /Khaled_Kanawati/threats/search?type=Domain&severity=High&source=SOC. Uses the local SQLite database; errors return status and message."
           },
           "event": [
             {
@@ -1113,8 +1113,8 @@
                 "value": "Bearer {{adminToken}}"
               }
             ],
-            "url": "{{baseUrl}}/Hasan_Zuelghina/logs/search",
-            "description": "GET /Hasan_Zuelghina/logs/search. Uses the local SQLite database; errors return status and message."
+            "url": "{{baseUrl}}/Hasan_Zuelghina/logs/search?user_id={{adminId}}&severity=Information&service=reports",
+            "description": "GET /Hasan_Zuelghina/logs/search?user_id={{adminId}}&severity=Information&service=reports. Uses the local SQLite database; errors return status and message."
           },
           "event": [
             {
@@ -1454,8 +1454,8 @@
                 "value": "Bearer {{adminToken}}"
               }
             ],
-            "url": "{{baseUrl}}/Khaled_Kanawati/vulnerabilities/search",
-            "description": "GET /Khaled_Kanawati/vulnerabilities/search. Uses the local SQLite database; errors return status and message."
+            "url": "{{baseUrl}}/Khaled_Kanawati/vulnerabilities/search?cve=CVE-2025-1234&severity=High&asset_id={{assetId}}&status=Open",
+            "description": "GET /Khaled_Kanawati/vulnerabilities/search?cve=CVE-2025-1234&severity=High&asset_id={{assetId}}&status=Open. Uses the local SQLite database; errors return status and message."
           },
           "event": [
             {
@@ -1625,8 +1625,8 @@
                 "value": "Bearer {{adminToken}}"
               }
             ],
-            "url": "{{baseUrl}}/Hasan_Zuelghina/notifications/search",
-            "description": "GET /Hasan_Zuelghina/notifications/search. Uses the local SQLite database; errors return status and message."
+            "url": "{{baseUrl}}/Hasan_Zuelghina/notifications/search?user_id={{employeeId}}&type=Security%20Alert&severity=Medium&status=Unread",
+            "description": "GET /Hasan_Zuelghina/notifications/search?user_id={{employeeId}}&type=Security%20Alert&severity=Medium&status=Unread. Uses the local SQLite database; errors return status and message."
           },
           "event": [
             {

@@ -35,7 +35,8 @@ def register(app):
     @route(H + '/notifications/search', methods=['GET'])
     @auth(ADMIN, ANALYST, AUDITOR)
     def notifications_search():
-        records = search('notifications', ('user_id', 'type', 'severity', 'status'))
+        records = search('notifications', ('user_id', 'type', 'severity', 'status'),
+                         exact=('user_id', 'type', 'severity', 'status'))
         if g.user['role'] == ANALYST:
             return [item for item in records if item['user_id'] == g.user['id']]
         return records

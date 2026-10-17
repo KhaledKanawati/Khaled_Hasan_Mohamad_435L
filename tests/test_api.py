@@ -249,6 +249,38 @@ def test_required_relationships_domains_and_large_ids(env):
         assert response.json['status'] == 'error'
 
 
+def test_search_filters_keep_ids_ips_and_read_status_distinct(env):
+    a = asset(env)
+    with env[0].app_context():
+        run('INSERT INTO users(id,full_name,username,email,password_hash,department,role) VALUES(?,?,?,?,?,?,?)',
+            (11, 'User Eleven', 'eleven', 'eleven@test.local',
+             one('SELECT password_hash FROM users WHERE id=3')['password_hash'], 'IT', 'Employee'))
+        run('INSERT INTO assets(id,name,type,ip_address,owner_id,department,criticality) VALUES(?,?,?,?,?,?,?)',
+            (11, 'mail-11', 'Server', '10.0.0.50', 1, 'IT', 'High'))
+    found = call(env, 'analyst', 'GET', H + '/assets/search?ip_address=10.0.0.5').json
+    assert [item['id'] for item in found] == [a['id']]
+    for asset_id in (a['id'], 11):
+        assert call(env, 'admin', 'POST', K + '/vulnerabilities', {
+            'title': 'Old package', 'description': 'Patch needed', 'cve': 'CVE-2026-1234',
+            'cvss': 8.1, 'severity': 'High', 'asset_id': asset_id, 'source': 'Scanner'}).status_code == 201
+    found = call(env, 'analyst', 'GET', K + f'/vulnerabilities/search?asset_id={a["id"]}').json
+    assert len(found) == 1 and found[0]['asset_id'] == a['id']
+    call(env, 'admin', 'POST', H + '/logs', {'user_id': 11, 'action': 'review',
+        'description': 'Reviewed asset', 'severity': 'Information', 'service': 'assets'})
+    found = call(env, 'auditor', 'GET', H + '/logs/search?user_id=1').json
+    assert found and all(item['user_id'] == 1 for item in found)
+    notices = []
+    for user_id in (3, 3, 11):
+        notices.append(call(env, 'admin', 'POST', H + '/notifications', {
+            'user_id': user_id, 'title': 'Update', 'message': 'Review device',
+            'type': 'Security Alert', 'severity': 'Medium'}).json)
+    call(env, 'employee', 'PUT', H + f'/notifications/{notices[0]["id"]}/read')
+    found = call(env, 'admin', 'GET', H + '/notifications/search?status=Read').json
+    assert [item['id'] for item in found] == [notices[0]['id']]
+    assert call(env, 'admin', 'GET', H + '/notifications/search?user_id=1').json == []
+    assert call(env, 'admin', 'GET', H + '/notifications/search?user_id=invalid').status_code == 400
+
+
 def test_distributed_report_calls_service_apis(env, monkeypatch):
     from services import reports
     app, _, _ = env
