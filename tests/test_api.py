@@ -191,6 +191,41 @@ def test_service_process_exposes_only_its_routes(tmp_path):
     assert client.get(H + '/assets').status_code == 401
 
 
+def test_wrong_json_types_return_validation_errors(env):
+    _, client, _ = env
+    bad_requests = [
+        ('POST', K + '/users/register', {'full_name': 'New User', 'username': 'new',
+                                       'email': 123, 'password': 'Pass12345', 'department': 'IT'}),
+        ('POST', K + '/users/login', {'username': 'admin', 'password': 123}),
+        ('POST', H + '/assets', {'name': 'bad', 'type': 'Server', 'ip_address': 123,
+                               'department': 'IT', 'owner_id': 1, 'criticality': 'High'}),
+        ('POST', H + '/assets', {'name': 'bad', 'type': 'Server', 'ip_address': '10.0.0.5',
+                               'department': 'IT', 'owner_id': '²', 'criticality': 'High'}),
+        ('POST', M + '/incidents', {'title': 'Bad', 'description': 'Bad asset',
+                                  'category': 'Email', 'severity': 'High', 'asset_id': [1]}),
+        ('POST', K + '/threats', {'type': 'Domain', 'value': 123, 'description': 'Bad',
+                                'severity': 'High', 'source': 'SOC'}),
+        ('POST', H + '/logs', {'user_id': 1, 'action': 'review', 'description': 'Bad',
+                             'severity': 'Warning', 'service': ['logs']}),
+        ('POST', K + '/vulnerabilities', {'title': 'Bad', 'description': 'Bad CVSS',
+                                        'cvss': True, 'severity': 'High', 'asset_id': 1,
+                                        'source': 'Scanner'}),
+        ('POST', H + '/notifications', {'user_id': 2, 'title': 123, 'message': 'Bad',
+                                      'type': 'Security Alert', 'severity': 'High'}),
+    ]
+    for method, path, data in bad_requests:
+        response = client.open(path, method=method, json=data, headers=env[2]['admin'])
+        assert response.status_code == 400, (path, response.json)
+        assert response.json['status'] == 'error'
+
+    playbook = call(env, 'admin', 'POST', M + '/playbooks', {
+        'name': 'Bad step test', 'description': 'Check step validation',
+        'category': 'Email', 'severity': 'High'}).json
+    response = call(env, 'admin', 'POST', M + f'/playbooks/{playbook["id"]}/actions',
+                    {'description': 'Fractional step', 'step_no': 1.5})
+    assert response.status_code == 400
+
+
 def test_distributed_report_calls_service_apis(env, monkeypatch):
     from services import reports
     app, _, _ = env
@@ -210,3 +245,66 @@ def test_distributed_report_calls_service_apis(env, monkeypatch):
     assert result.json == {'users':1,'assets':1,'open_incidents':1,'critical_threats':1,
                            'vulnerabilities':0,'recent_activity':[]}
     assert set(seen) == set(records)
+
+
+def test_service_apps_share_notifications_and_reports(tmp_path, monkeypatch):
+    import common
+    from flask import request
+    from services import reports
+
+    groups = ('users', 'assets', 'incidents', 'threats', 'logs', 'reports',
+              'vulnerabilities', 'notifications', 'playbooks')
+    config = {'TESTING': True, 'DATABASE': str(tmp_path / 'services.db'),
+              'SECRET_KEY': 'shared-test-secret',
+              'SERVICE_URLS': {name: 'http://localhost' for name in groups}}
+    apps = {name: create_app(config, service=name) for name in groups}
+    clients = {name: app.test_client() for name, app in apps.items()}
+    with apps['users'].app_context():
+        for name, role in (('admin', 'Admin'), ('analyst', 'Analyst'),
+                           ('employee', 'Employee'), ('auditor', 'Auditor')):
+            run('INSERT INTO users(full_name,username,email,password_hash,department,role) VALUES(?,?,?,?,?,?)',
+                (name.title(), name, name + '@test.local', generate_password_hash('Pass12345'), 'IT', role))
+    headers = {}
+    for name in ('admin', 'analyst', 'employee', 'auditor'):
+        response = clients['users'].post(K + '/users/login',
+                                         json={'username': name, 'password': 'Pass12345'})
+        headers[name] = {'Authorization': 'Bearer ' + response.json['token']}
+
+    def local_call(group, path, data=None):
+        response = clients[group].open(path, method='POST' if data is not None else 'GET',
+                                       json=data, headers={'Authorization': request.headers['Authorization']})
+        assert response.status_code < 400, (group, path, response.json)
+        return response.json
+
+    monkeypatch.setattr(common, 'service_call', local_call)
+    monkeypatch.setattr(reports, 'service_call', local_call)
+    asset = clients['assets'].post(H + '/assets', json={
+        'name': 'mail-01', 'type': 'Server', 'ip_address': '10.0.0.5',
+        'department': 'IT', 'owner_id': 1, 'criticality': 'High'}, headers=headers['admin'])
+    assert asset.status_code == 201
+    incident = clients['incidents'].post(M + '/incidents', json={
+        'title': 'Phishing', 'description': 'Mailbox compromised', 'category': 'Email',
+        'severity': 'High', 'asset_id': asset.json['id']}, headers=headers['employee'])
+    assert incident.status_code == 201
+    assigned = clients['incidents'].put(M + f'/incidents/{incident.json["id"]}/assign',
+                                        json={'analyst_id': 2}, headers=headers['admin'])
+    assert assigned.status_code == 200
+    threat = clients['threats'].post(K + '/threats', json={
+        'type': 'Domain', 'value': 'bad.example', 'description': 'Phishing',
+        'severity': 'Critical', 'source': 'SOC'}, headers=headers['admin'])
+    assert threat.status_code == 201
+    vulnerability = clients['vulnerabilities'].post(K + '/vulnerabilities', json={
+        'title': 'Old package', 'description': 'Patch needed', 'cvss': 9.1,
+        'severity': 'Critical', 'asset_id': asset.json['id'], 'source': 'Scanner'},
+        headers=headers['admin'])
+    assert vulnerability.status_code == 201
+    notices = clients['notifications'].get(H + '/notifications/user/2', headers=headers['analyst'])
+    assert {item['type'] for item in notices.json} == {
+        'Incident Assignment', 'Threat Alert', 'Vulnerability Alert'}
+    summary = clients['reports'].get(M + '/reports/summary', headers=headers['auditor'])
+    assert summary.status_code == 200
+    assert summary.json['assets'] == 1
+    assert summary.json['critical_threats'] == 1
+    assert summary.json['vulnerabilities'] == 1
+    assert clients['logs'].get(H + '/logs', headers=headers['auditor']).status_code == 200
+    assert clients['playbooks'].get(M + '/playbooks', headers=headers['auditor']).status_code == 200

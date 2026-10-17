@@ -15,6 +15,13 @@ OWNERS = {'users': 'Khaled_Kanawati', 'assets': 'Hasan_Zuelghina',
           'logs': 'Hasan_Zuelghina', 'reports': 'Mohamad_Zuelghina',
           'vulnerabilities': 'Khaled_Kanawati', 'notifications': 'Hasan_Zuelghina',
           'playbooks': 'Mohamad_Zuelghina', 'actions': 'Mohamad_Zuelghina'}
+TEXT_FIELDS = {'full_name', 'username', 'email', 'password', 'department', 'role',
+               'status', 'name', 'type', 'ip_address', 'criticality', 'title',
+               'description', 'category', 'severity', 'source', 'content',
+               'value', 'action', 'service', 'message'}
+OPTIONAL_TEXT_FIELDS = {'operating_system', 'location', 'cve'}
+ID_FIELDS = {'user_id', 'owner_id', 'reporter_id', 'asset_id', 'analyst_id',
+             'assigned_user_id', 'step_no'}
 
 
 def api_error(code, message):
@@ -29,9 +36,25 @@ def body(*required):
     data = request.get_json(silent=True)
     if not isinstance(data, dict):
         fail(400, 'Expected a JSON object')
-    missing = [key for key in required if not isinstance(data.get(key), (str, int, float)) or str(data[key]).strip() == '']
+    missing = [key for key in required if data.get(key) is None or data[key] == '']
     if missing:
         fail(400, 'Missing required fields: ' + ', '.join(missing))
+    for key, value in data.items():
+        if key in TEXT_FIELDS and (not isinstance(value, str) or not value.strip()):
+            fail(400, f'{key} must be non-empty text')
+        if key in OPTIONAL_TEXT_FIELDS and value is not None and not isinstance(value, str):
+            fail(400, f'{key} must be text')
+        if key in ID_FIELDS and value is not None:
+            raw = str(value)
+            if (isinstance(value, bool) or not isinstance(value, (int, str))
+                    or not re.fullmatch(r'[0-9]{1,19}', raw)):
+                fail(400, f'{key} must be a positive whole number')
+            number = int(raw)
+            if not 1 <= number <= 2**63 - 1:
+                fail(400, f'{key} must be a positive whole number')
+            data[key] = number
+        if key == 'cvss' and isinstance(value, bool):
+            fail(400, 'Invalid CVSS score')
     return data
 
 
