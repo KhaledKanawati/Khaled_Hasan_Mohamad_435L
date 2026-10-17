@@ -32,6 +32,17 @@ def fail(code, message):
     abort(code, description=message)
 
 
+def positive_int(value, field):
+    raw = str(value)
+    if (isinstance(value, bool) or not isinstance(value, (int, str))
+            or not re.fullmatch(r'[0-9]{1,19}', raw)):
+        fail(400, f'{field} must be a positive whole number')
+    number = int(raw)
+    if not 1 <= number <= 2**63 - 1:
+        fail(400, f'{field} must be a positive whole number')
+    return number
+
+
 def body(*required):
     data = request.get_json(silent=True)
     if not isinstance(data, dict):
@@ -45,14 +56,7 @@ def body(*required):
         if key in OPTIONAL_TEXT_FIELDS and value is not None and not isinstance(value, str):
             fail(400, f'{key} must be text')
         if key in ID_FIELDS and value is not None:
-            raw = str(value)
-            if (isinstance(value, bool) or not isinstance(value, (int, str))
-                    or not re.fullmatch(r'[0-9]{1,19}', raw)):
-                fail(400, f'{key} must be a positive whole number')
-            number = int(raw)
-            if not 1 <= number <= 2**63 - 1:
-                fail(400, f'{key} must be a positive whole number')
-            data[key] = number
+            data[key] = positive_int(value, key)
         if key == 'cvss' and isinstance(value, bool):
             fail(400, 'Invalid CVSS score')
     return data
@@ -65,6 +69,7 @@ def choice(value, allowed, field):
 
 
 def ref(table, id):
+    id = positive_int(id, 'id')
     row = one(f'SELECT * FROM {table} WHERE id=?', (id,))
     if not row:
         fail(404, f'{table[:-1].capitalize()} not found')

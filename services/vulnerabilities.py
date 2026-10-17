@@ -12,7 +12,7 @@ def register(app):
     @route(K + '/vulnerabilities', methods=['POST'])
     @auth(ADMIN)
     def create_vulnerability():
-        d = body('title', 'description', 'cvss', 'severity', 'asset_id', 'source')
+        d = body('title', 'description', 'cve', 'cvss', 'severity', 'asset_id', 'source')
         choice(d['severity'], LEVELS, 'severity')
         ref('assets', d['asset_id'])
         try: cvss = float(d['cvss'])

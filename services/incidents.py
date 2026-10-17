@@ -17,14 +17,14 @@ def register(app):
     @route(M + '/incidents', methods=['POST'])
     @auth(ADMIN, EMPLOYEE)
     def create_incident():
-        d = body('title', 'description', 'category', 'severity')
+        d = body('title', 'description', 'category', 'severity', 'asset_id')
         choice(d['severity'], LEVELS, 'severity')
         if g.user['role'] == EMPLOYEE:
             d['reporter_id'] = g.user['id']
         else:
             d['reporter_id'] = d.get('reporter_id', g.user['id'])
             ref('users', d['reporter_id'])
-        if d.get('asset_id'): ref('assets', d['asset_id'])
+        ref('assets', d['asset_id'])
         return insert('incidents', d, ('title', 'description', 'category', 'severity', 'reporter_id', 'asset_id')), 201
 
     @route(M + '/incidents', methods=['GET'])

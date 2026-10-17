@@ -144,7 +144,7 @@ def test_vulnerability_flow(env):
 
 def test_critical_vulnerability_alert_and_bad_cvss(env):
     a = asset(env)
-    data = {'title': 'Exposed admin', 'description': 'Patch needed', 'cvss': 'bad',
+    data = {'title': 'Exposed admin', 'description': 'Patch needed', 'cve': 'CVE-2025-1234', 'cvss': 'bad',
             'severity': 'Critical', 'asset_id': a['id'], 'source': 'Scanner'}
     assert call(env, 'admin', 'POST', K + '/vulnerabilities', data).status_code == 400
     data['cvss'] = 9.8
@@ -208,7 +208,7 @@ def test_wrong_json_types_return_validation_errors(env):
         ('POST', H + '/logs', {'user_id': 1, 'action': 'review', 'description': 'Bad',
                              'severity': 'Warning', 'service': ['logs']}),
         ('POST', K + '/vulnerabilities', {'title': 'Bad', 'description': 'Bad CVSS',
-                                        'cvss': True, 'severity': 'High', 'asset_id': 1,
+                                        'cve': 'CVE-2025-1234', 'cvss': True, 'severity': 'High', 'asset_id': 1,
                                         'source': 'Scanner'}),
         ('POST', H + '/notifications', {'user_id': 2, 'title': 123, 'message': 'Bad',
                                       'type': 'Security Alert', 'severity': 'High'}),
@@ -224,6 +224,29 @@ def test_wrong_json_types_return_validation_errors(env):
     response = call(env, 'admin', 'POST', M + f'/playbooks/{playbook["id"]}/actions',
                     {'description': 'Fractional step', 'step_no': 1.5})
     assert response.status_code == 400
+
+
+def test_required_relationships_domains_and_large_ids(env):
+    a = asset(env)
+    response = call(env, 'employee', 'POST', M + '/incidents', {
+        'title': 'Phishing', 'description': 'Bad email', 'category': 'Email', 'severity': 'High'})
+    assert response.status_code == 400
+    assert 'asset_id' in response.json['message']
+    response = call(env, 'admin', 'POST', K + '/vulnerabilities', {
+        'title': 'Old package', 'description': 'Patch needed', 'cvss': 8.1,
+        'severity': 'High', 'asset_id': a['id'], 'source': 'Scanner'})
+    assert response.status_code == 400
+    assert 'cve' in response.json['message']
+    for domain in ('-bad.example', 'bad-.example', 'bad..example', 'a' * 64 + '.example'):
+        response = call(env, 'admin', 'POST', K + '/threats', {
+            'type': 'Domain', 'value': domain, 'description': 'Bad domain',
+            'severity': 'High', 'source': 'SOC'})
+        assert response.status_code == 400, domain
+    for path in (H + '/assets/', M + '/incidents/', K + '/threats/', H + '/logs/',
+                 K + '/vulnerabilities/', H + '/notifications/', M + '/playbooks/'):
+        response = call(env, 'admin', 'GET', path + '9' * 30)
+        assert response.status_code == 400, path
+        assert response.json['status'] == 'error'
 
 
 def test_distributed_report_calls_service_apis(env, monkeypatch):
@@ -294,7 +317,7 @@ def test_service_apps_share_notifications_and_reports(tmp_path, monkeypatch):
         'severity': 'Critical', 'source': 'SOC'}, headers=headers['admin'])
     assert threat.status_code == 201
     vulnerability = clients['vulnerabilities'].post(K + '/vulnerabilities', json={
-        'title': 'Old package', 'description': 'Patch needed', 'cvss': 9.1,
+        'title': 'Old package', 'description': 'Patch needed', 'cve': 'CVE-2025-1234', 'cvss': 9.1,
         'severity': 'Critical', 'asset_id': asset.json['id'], 'source': 'Scanner'},
         headers=headers['admin'])
     assert vulnerability.status_code == 201

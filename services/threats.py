@@ -14,7 +14,8 @@ def register(app):
         if 'severity' in d: choice(d['severity'], LEVELS, 'severity')
         kind, value = d.get('type'), d.get('value')
         if kind == 'IP Address' and value: valid_ip(value)
-        if kind == 'Domain' and value and not re.fullmatch(r'(?=.{1,253}$)([A-Za-z0-9-]+\.)+[A-Za-z]{2,}', value):
+        domain = r'(?=.{1,253}$)(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,63}'
+        if kind == 'Domain' and value and not re.fullmatch(domain, value):
             fail(400, 'Invalid domain')
         if kind == 'File Hash' and value and not re.fullmatch(r'(?:[0-9a-fA-F]{32}|[0-9a-fA-F]{40}|[0-9a-fA-F]{64})', value):
             fail(400, 'Invalid file hash')
