@@ -1,6 +1,8 @@
 """Run the importable collection in order against the Flask API."""
 import json
 import re
+import pytest
+from datetime import datetime, timezone
 from pathlib import Path
 
 from app import create_app
@@ -9,7 +11,9 @@ from manage import create_user
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_collection_runs_in_order(tmp_path):
+@pytest.mark.parametrize('collection_name', ['Security_Incident_Backend.postman_collection.json',
+                                             'Detailed_Evidence.postman_collection.json'])
+def test_collection_runs_in_order(tmp_path, collection_name):
     app = create_app({'TESTING': True, 'DATABASE': str(tmp_path / 'postman.db'),
                       'SECRET_KEY': 'collection-test-secret'})
     with app.app_context():
@@ -17,9 +21,11 @@ def test_collection_runs_in_order(tmp_path):
                            ('employee', 'Employee'), ('auditor', 'Auditor')]:
             create_user(name.title(), name, role, 'DemoPass123!')
 
-    collection = json.loads((ROOT / 'postman' / 'Security_Incident_Backend.postman_collection.json').read_text())
+    collection = json.loads((ROOT / 'postman' / collection_name).read_text(encoding='utf-8'))
     environment = json.loads((ROOT / 'postman' / 'Local.postman_environment.json').read_text())
     values = {item['key']: str(item['value']) for item in environment['values']}
+    values.update(runTag='123456789', runHash='0'*55+'123456789',
+                  runDate=datetime.now(timezone.utc).date().isoformat())
     counter = 100
 
     def expand(value):

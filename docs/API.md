@@ -20,6 +20,9 @@ Search filters combine with AND. IDs, IP addresses, types, severities, statuses,
 | User By Name | GET | `/Khaled_Kanawati/users/{{username}}` | Path ID, if present | 200 JSON |
 | Update User | PUT | `/Khaled_Kanawati/users/{{userId}}` | full_name, email, department | 200 JSON |
 | User Role | PUT | `/Khaled_Kanawati/users/{{userId}}/role` | role | 200 JSON |
+| Roles And Permissions | GET | `/Khaled_Kanawati/users/roles` | Path ID, if present | 200 JSON |
+| View User Roles | GET | `/Khaled_Kanawati/users/{{userId}}/roles` | Path ID, if present | 200 JSON |
+| Remove User Role | DELETE | `/Khaled_Kanawati/users/{{userId}}/role` | Path ID, if present | 200 message |
 | User Status | PUT | `/Khaled_Kanawati/users/{{userId}}/status` | status | 200 JSON |
 | Delete User | DELETE | `/Khaled_Kanawati/users/{{userId}}` | Path ID, if present | 200 message |
 
@@ -111,3 +114,9 @@ Search filters combine with AND. IDs, IP addresses, types, severities, statuses,
 | Create Action | POST | `/Mohamad_Zuelghina/playbooks/{{playbookId}}/actions` | description, step_no | 201 record |
 | Action Status | PUT | `/Mohamad_Zuelghina/actions/{{actionId}}/status` | status, assigned_user_id | 200 JSON |
 | Delete Playbook | DELETE | `/Mohamad_Zuelghina/playbooks/{{playbookId}}` | Path ID, if present | 200 message |
+
+## Optional incident asset and role revocation
+
+An incident can be reported without `asset_id`; the stored value is null. A supplied asset ID must exist. The reporter is always taken from the authenticated user.
+
+`DELETE /Khaled_Kanawati/users/{id}/role` is Admin-only and returns the user to the mandatory Employee role. An Admin cannot revoke their own role. Role catalogs and per-user permissions are available to Admin and Auditor through the two GET role endpoints.

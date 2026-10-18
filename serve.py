@@ -10,7 +10,8 @@ from common import OWNERS
 
 GROUPS = ('users', 'assets', 'incidents', 'threats', 'logs', 'reports',
           'vulnerabilities', 'notifications', 'playbooks')
-URLS = {name: f'http://127.0.0.1:{5101 + i}' for i, name in enumerate(GROUPS)}
+SERVICE_PORT = int(os.environ.get('SERVICE_PORT', '5101'))
+URLS = {name: f'http://127.0.0.1:{SERVICE_PORT + i}' for i, name in enumerate(GROUPS)}
 
 
 def run_service(name):
@@ -48,7 +49,7 @@ def gateway():
         except URLError:
             return jsonify(status='error', message='Service is unavailable'), 502
 
-    app.run(host='127.0.0.1', port=5000, use_reloader=False)
+    app.run(host='127.0.0.1', port=int(os.environ.get('GATEWAY_PORT', '5000')), use_reloader=False)
 
 
 if __name__ == '__main__':

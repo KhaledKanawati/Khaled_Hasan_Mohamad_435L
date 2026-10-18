@@ -109,6 +109,7 @@ def auth(*roles):
                 audit('denied', f'{request.method} {request.path}', 'Warning', request.path)
                 return api_error(403, 'User does not have permission to perform this operation')
             return fn(*args, **kwargs)
+        wrapped.allowed_roles = roles
         return wrapped
     return deco
 

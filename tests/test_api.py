@@ -230,8 +230,8 @@ def test_required_relationships_domains_and_large_ids(env):
     a = asset(env)
     response = call(env, 'employee', 'POST', M + '/incidents', {
         'title': 'Phishing', 'description': 'Bad email', 'category': 'Email', 'severity': 'High'})
-    assert response.status_code == 400
-    assert 'asset_id' in response.json['message']
+    assert response.status_code == 201
+    assert response.json['asset_id'] is None
     response = call(env, 'admin', 'POST', K + '/vulnerabilities', {
         'title': 'Old package', 'description': 'Patch needed', 'cvss': 8.1,
         'severity': 'High', 'asset_id': a['id'], 'source': 'Scanner'})
@@ -363,3 +363,35 @@ def test_service_apps_share_notifications_and_reports(tmp_path, monkeypatch):
     assert summary.json['vulnerabilities'] == 1
     assert clients['logs'].get(H + '/logs', headers=headers['auditor']).status_code == 200
     assert clients['playbooks'].get(M + '/playbooks', headers=headers['auditor']).status_code == 200
+
+
+def test_role_catalog_and_revocation(env):
+    app, client, tokens = env
+    path = K + '/users/roles'
+    assert call(env, 'employee', 'GET', path).status_code == 403
+    catalog = call(env, 'auditor', 'GET', path)
+    assert catalog.status_code == 200
+    assert {r['role'] for r in catalog.json['roles']} == {'Admin', 'Analyst', 'Employee', 'Auditor'}
+    admin = next(r for r in catalog.json['roles'] if r['role'] == 'Admin')
+    assert {'method': 'DELETE', 'path': K + '/users/<int:id>/role'} in admin['permissions']
+    assert call(env, 'auditor', 'GET', K + '/users/2/roles').json['role'] == 'Analyst'
+    assert call(env, 'auditor', 'DELETE', K + '/users/2/role').status_code == 403
+    assert call(env, 'admin', 'DELETE', K + '/users/1/role').status_code == 400
+    assert call(env, 'admin', 'DELETE', K + '/users/999999/role').status_code == 404
+    assert call(env, 'admin', 'DELETE', K + '/users/2/role').json['role'] == 'Employee'
+    assert call(env, 'analyst', 'GET', K + '/threats/search').status_code == 403
+    assert call(env, 'admin', 'GET', K + '/users/2/roles').json['role'] == 'Employee'
+    with app.app_context():
+        assert one("SELECT COUNT(*) AS n FROM logs WHERE action='role_revoke'")['n'] == 1
+
+
+def test_employee_can_report_without_asset(env):
+    payload = {'title': 'Suspicious email', 'description': 'Unknown affected device',
+               'category': 'Email', 'severity': 'Medium', 'reporter_id': 1}
+    response = call(env, 'employee', 'POST', M + '/incidents', payload)
+    assert response.status_code == 201
+    assert response.json['asset_id'] is None
+    assert response.json['reporter_id'] == 3
+    assert call(env, 'employee', 'GET', M + f'/incidents/{response.json["id"]}').status_code == 200
+    assert call(env, 'employee', 'POST', M + '/incidents', {**payload, 'asset_id': 999999}).status_code == 404
+    assert call(env, 'employee', 'POST', M + '/incidents', {**payload, 'asset_id': 'bad'}).status_code == 400

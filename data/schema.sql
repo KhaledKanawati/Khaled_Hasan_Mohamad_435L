@@ -1,0 +1,67 @@
+
+PRAGMA foreign_keys = ON;
+CREATE TABLE IF NOT EXISTS users (
+ id INTEGER PRIMARY KEY, full_name TEXT NOT NULL, username TEXT NOT NULL UNIQUE,
+ email TEXT NOT NULL UNIQUE, password_hash TEXT NOT NULL, department TEXT NOT NULL,
+ role TEXT NOT NULL CHECK(role IN ('Admin','Analyst','Employee','Auditor')),
+ status TEXT NOT NULL DEFAULT 'Active' CHECK(status IN ('Active','Inactive','Suspended')),
+ created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, last_login TEXT
+);
+CREATE TABLE IF NOT EXISTS assets (
+ id INTEGER PRIMARY KEY, name TEXT NOT NULL, type TEXT NOT NULL, ip_address TEXT NOT NULL,
+ operating_system TEXT, owner_id INTEGER NOT NULL REFERENCES users(id),
+ department TEXT NOT NULL, location TEXT, criticality TEXT NOT NULL,
+ status TEXT NOT NULL DEFAULT 'Active'
+);
+CREATE TABLE IF NOT EXISTS incidents (
+ id INTEGER PRIMARY KEY, title TEXT NOT NULL, description TEXT NOT NULL,
+ category TEXT NOT NULL, severity TEXT NOT NULL, reporter_id INTEGER NOT NULL REFERENCES users(id),
+ asset_id INTEGER REFERENCES assets(id), analyst_id INTEGER REFERENCES users(id),
+ status TEXT NOT NULL DEFAULT 'Open', created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ resolved_at TEXT
+);
+CREATE TABLE IF NOT EXISTS notes (
+ id INTEGER PRIMARY KEY, incident_id INTEGER NOT NULL REFERENCES incidents(id) ON DELETE CASCADE,
+ analyst_id INTEGER NOT NULL REFERENCES users(id), content TEXT NOT NULL,
+ created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS threats (
+ id INTEGER PRIMARY KEY, type TEXT NOT NULL, value TEXT NOT NULL, description TEXT NOT NULL,
+ severity TEXT NOT NULL, source TEXT NOT NULL,
+ created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, UNIQUE(type,value)
+);
+CREATE TABLE IF NOT EXISTS logs (
+ id INTEGER PRIMARY KEY, user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+ actor_name TEXT,
+ action TEXT NOT NULL, description TEXT NOT NULL, severity TEXT NOT NULL,
+ service TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS vulnerabilities (
+ id INTEGER PRIMARY KEY, title TEXT NOT NULL, description TEXT NOT NULL,
+ cve TEXT, cvss REAL NOT NULL CHECK(cvss BETWEEN 0 AND 10), severity TEXT NOT NULL,
+ asset_id INTEGER NOT NULL REFERENCES assets(id), source TEXT NOT NULL,
+ status TEXT NOT NULL DEFAULT 'Open', created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ resolved_at TEXT
+);
+CREATE TABLE IF NOT EXISTS notifications (
+ id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+ title TEXT NOT NULL, message TEXT NOT NULL, type TEXT NOT NULL, severity TEXT NOT NULL,
+ status TEXT NOT NULL DEFAULT 'Unread', created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ read_at TEXT
+);
+CREATE TABLE IF NOT EXISTS playbooks (
+ id INTEGER PRIMARY KEY, name TEXT NOT NULL, description TEXT NOT NULL,
+ category TEXT NOT NULL, severity TEXT NOT NULL,
+ created_by INTEGER NOT NULL REFERENCES users(id), created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS actions (
+ id INTEGER PRIMARY KEY, playbook_id INTEGER NOT NULL REFERENCES playbooks(id) ON DELETE CASCADE,
+ description TEXT NOT NULL, step_no INTEGER NOT NULL CHECK(step_no > 0),
+ status TEXT NOT NULL DEFAULT 'Pending', assigned_user_id INTEGER REFERENCES users(id),
+ completed_at TEXT, UNIQUE(playbook_id,step_no)
+);
+CREATE TABLE IF NOT EXISTS action_history (
+ id INTEGER PRIMARY KEY, action_id INTEGER NOT NULL REFERENCES actions(id) ON DELETE CASCADE,
+ status TEXT NOT NULL, actor_id INTEGER NOT NULL REFERENCES users(id),
+ changed_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

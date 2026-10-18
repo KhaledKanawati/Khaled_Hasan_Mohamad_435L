@@ -42,6 +42,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/login",
+                "description": "POST /Khaled_Kanawati/users/login. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"DemoPass123!\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:25 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "274"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"token\": \"<redacted demo bearer token>\",\n  \"user\": {\n    \"created_at\": \"2026-10-18 18:12:10\",\n    \"department\": \"Security\",\n    \"email\": \"admin@example.test\",\n    \"full_name\": \"Demo Administrator\",\n    \"id\": 1,\n    \"last_login\": \"2026-10-18 18:12:25\",\n    \"role\": \"Admin\",\n    \"status\": \"Active\",\n    \"username\": \"admin\"\n  }\n}"
+            }
           ]
         },
         {
@@ -76,6 +128,58 @@
                   "if (pm.response.code === 200) pm.environment.set(\"analystToken\", pm.response.json().token);"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/login",
+                "description": "POST /Khaled_Kanawati/users/login. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"analyst\",\n  \"password\": \"DemoPass123!\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:25 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "274"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"token\": \"<redacted demo bearer token>\",\n  \"user\": {\n    \"created_at\": \"2026-10-18 18:12:10\",\n    \"department\": \"Security\",\n    \"email\": \"analyst@example.test\",\n    \"full_name\": \"Demo Analyst\",\n    \"id\": 2,\n    \"last_login\": \"2026-10-18 18:12:25\",\n    \"role\": \"Analyst\",\n    \"status\": \"Active\",\n    \"username\": \"analyst\"\n  }\n}"
             }
           ]
         },
@@ -112,6 +216,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/login",
+                "description": "POST /Khaled_Kanawati/users/login. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"employee\",\n  \"password\": \"DemoPass123!\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:25 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "278"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"token\": \"<redacted demo bearer token>\",\n  \"user\": {\n    \"created_at\": \"2026-10-18 18:12:11\",\n    \"department\": \"Security\",\n    \"email\": \"employee@example.test\",\n    \"full_name\": \"Demo Employee\",\n    \"id\": 3,\n    \"last_login\": \"2026-10-18 18:12:25\",\n    \"role\": \"Employee\",\n    \"status\": \"Active\",\n    \"username\": \"employee\"\n  }\n}"
+            }
           ]
         },
         {
@@ -146,6 +302,58 @@
                   "if (pm.response.code === 200) pm.environment.set(\"auditorToken\", pm.response.json().token);"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/login",
+                "description": "POST /Khaled_Kanawati/users/login. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"auditor\",\n  \"password\": \"DemoPass123!\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:25 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "274"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"token\": \"<redacted demo bearer token>\",\n  \"user\": {\n    \"created_at\": \"2026-10-18 18:12:11\",\n    \"department\": \"Security\",\n    \"email\": \"auditor@example.test\",\n    \"full_name\": \"Demo Auditor\",\n    \"id\": 4,\n    \"last_login\": \"2026-10-18 18:12:25\",\n    \"role\": \"Auditor\",\n    \"status\": \"Active\",\n    \"username\": \"auditor\"\n  }\n}"
             }
           ]
         }
@@ -185,6 +393,58 @@
                   "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/register",
+                "description": "POST /Khaled_Kanawati/users/register. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"full_name\": \"New Employee\",\n  \"username\": \"new_employee_1001\",\n  \"email\": \"new_employee_1002@example.test\",\n  \"password\": \"DemoPass123!\",\n  \"department\": \"IT\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "215"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:26\",\n  \"department\": \"IT\",\n  \"email\": \"new_employee_1002@example.test\",\n  \"full_name\": \"New Employee\",\n  \"id\": 5,\n  \"last_login\": null,\n  \"role\": \"Employee\",\n  \"status\": \"Active\",\n  \"username\": \"new_employee_1001\"\n}"
             }
           ]
         },
@@ -227,6 +487,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users",
+                "description": "POST /Khaled_Kanawati/users. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"full_name\": \"New Analyst\",\n  \"username\": \"new_analyst_1003\",\n  \"email\": \"new_analyst_1004@example.test\",\n  \"password\": \"DemoPass123!\",\n  \"department\": \"Security\",\n  \"role\": \"Analyst\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "217"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:26\",\n  \"department\": \"Security\",\n  \"email\": \"new_analyst_1004@example.test\",\n  \"full_name\": \"New Analyst\",\n  \"id\": 6,\n  \"last_login\": null,\n  \"role\": \"Analyst\",\n  \"status\": \"Active\",\n  \"username\": \"new_analyst_1003\"\n}"
+            }
           ]
         },
         {
@@ -261,6 +573,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/login",
+                "description": "POST /Khaled_Kanawati/users/login. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"DemoPass123!\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "274"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"token\": \"<redacted demo bearer token>\",\n  \"user\": {\n    \"created_at\": \"2026-10-18 18:12:10\",\n    \"department\": \"Security\",\n    \"email\": \"admin@example.test\",\n    \"full_name\": \"Demo Administrator\",\n    \"id\": 1,\n    \"last_login\": \"2026-10-18 18:12:26\",\n    \"role\": \"Admin\",\n    \"status\": \"Active\",\n    \"username\": \"admin\"\n  }\n}"
+            }
           ]
         },
         {
@@ -290,6 +654,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users",
+                "description": "GET /Khaled_Kanawati/users. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1306"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"created_at\": \"2026-10-18 18:12:10\",\n    \"department\": \"Security\",\n    \"email\": \"admin@example.test\",\n    \"full_name\": \"Demo Administrator\",\n    \"id\": 1,\n    \"last_login\": \"2026-10-18 18:12:26\",\n    \"role\": \"Admin\",\n    \"status\": \"Active\",\n    \"username\": \"admin\"\n  },\n  {\n    \"created_at\": \"2026-10-18 18:12:10\",\n    \"department\": \"Security\",\n    \"email\": \"analyst@example.test\",\n    \"full_name\": \"Demo Analyst\",\n    \"id\": 2,\n    \"last_login\": \"2026-10-18 18:12:25\",\n    \"role\": \"Analyst\",\n    \"status\": \"Active\",\n    \"username\": \"analyst\"\n  },\n  {\n    \"created_at\": \"2026-10-18 18:12:11\",\n    \"department\": \"Security\",\n    \"email\": \"employee@example.test\",\n    \"full_name\": \"Demo Employee\",\n    \"id\": 3,\n    \"last_login\": \"2026-10-18 18:12:25\",\n    \"role\": \"Employee\",\n    \"status\": \"Active\",\n    \"username\": \"employee\"\n  },\n  {\n    \"created_at\": \"2026-10-18 18:12:11\",\n    \"department\": \"Security\",\n    \"email\": \"auditor@example.test\",\n    \"full_name\": \"Demo Auditor\",\n    \"id\": 4,\n    \"last_login\": \"2026-10-18 18:12:25\",\n    \"role\": \"Auditor\",\n    \"status\": \"Active\",\n    \"username\": \"auditor\"\n  },\n  {\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"department\": \"IT\",\n    \"email\": \"new_employee_1002@example.test\",\n    \"full_name\": \"New Employee\",\n    \"id\": 5,\n    \"last_login\": null,\n    \"role\": \"Employee\",\n    \"status\": \"Active\",\n    \"username\": \"new_employee_1001\"\n  },\n  {\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"department\": \"Security\",\n    \"email\": \"new_analyst_1004@example.test\",\n    \"full_name\": \"New Analyst\",\n    \"id\": 6,\n    \"last_login\": null,\n    \"role\": \"Analyst\",\n    \"status\": \"Active\",\n    \"username\": \"new_analyst_1003\"\n  }\n]"
+            }
           ]
         },
         {
@@ -318,6 +725,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/employee",
+                "description": "GET /Khaled_Kanawati/users/{{username}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "221"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:11\",\n  \"department\": \"Security\",\n  \"email\": \"employee@example.test\",\n  \"full_name\": \"Demo Employee\",\n  \"id\": 3,\n  \"last_login\": \"2026-10-18 18:12:25\",\n  \"role\": \"Employee\",\n  \"status\": \"Active\",\n  \"username\": \"employee\"\n}"
             }
           ]
         },
@@ -357,6 +807,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/6",
+                "description": "PUT /Khaled_Kanawati/users/{{userId}}. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"full_name\": \"Updated Analyst\",\n  \"email\": \"analyst_updated_1005@example.test\",\n  \"department\": \"IT\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "219"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:26\",\n  \"department\": \"IT\",\n  \"email\": \"analyst_updated_1005@example.test\",\n  \"full_name\": \"Updated Analyst\",\n  \"id\": 6,\n  \"last_login\": null,\n  \"role\": \"Analyst\",\n  \"status\": \"Active\",\n  \"username\": \"new_analyst_1003\"\n}"
+            }
           ]
         },
         {
@@ -395,6 +897,202 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/6/role",
+                "description": "PUT /Khaled_Kanawati/users/{{userId}}/role. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"role\": \"Analyst\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "219"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:26\",\n  \"department\": \"IT\",\n  \"email\": \"analyst_updated_1005@example.test\",\n  \"full_name\": \"Updated Analyst\",\n  \"id\": 6,\n  \"last_login\": null,\n  \"role\": \"Analyst\",\n  \"status\": \"Active\",\n  \"username\": \"new_analyst_1003\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Roles And Permissions",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/Khaled_Kanawati/users/roles",
+            "description": "GET /Khaled_Kanawati/users/roles. Uses the local SQLite database; errors return status and message."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/roles",
+                "description": "GET /Khaled_Kanawati/users/roles. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:26 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "7678"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"roles\": [\n    {\n      \"permissions\": [\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Hasan_Zuelghina/assets\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/assets\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/assets/<int:id>\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Hasan_Zuelghina/assets/<int:id>\"\n        },\n        {\n          \"method\": \"DELETE\",\n          \"path\": \"/Hasan_Zuelghina/assets/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/assets/<int:id>/history\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/assets/search\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Hasan_Zuelghina/logs\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/logs\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/logs/<int:id>\"\n        },\n        {\n          \"method\": \"DELETE\",\n          \"path\": \"/Hasan_Zuelghina/logs/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/logs/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/logs/user/<int:user_id>\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Hasan_Zuelghina/notifications\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/<int:id>\"\n        },\n        {\n          \"method\": \"DELETE\",\n          \"path\": \"/Hasan_Zuelghina/notifications/<int:id>\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Hasan_Zuelghina/notifications/<int:id>/read\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/user/<int:user_id>\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Khaled_Kanawati/threats\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/threats\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/threats/<int:id>\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Khaled_Kanawati/threats/<int:id>\"\n        },\n        {\n          \"method\": \"DELETE\",\n          \"path\": \"/Khaled_Kanawati/threats/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/threats/search\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Khaled_Kanawati/users\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/users\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Khaled_Kanawati/users/<int:id>\"\n        },\n        {\n          \"method\": \"DELETE\",\n          \"path\": \"/Khaled_Kanawati/users/<int:id>\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Khaled_Kanawati/users/<int:id>/role\"\n        },\n        {\n          \"method\": \"DELETE\",\n          \"path\": \"/Khaled_Kanawati/users/<int:id>/role\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/users/<int:id>/roles\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Khaled_Kanawati/users/<int:id>/status\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/users/<username>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/users/roles\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities/<int:id>\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities/<int:id>\"\n        },\n        {\n          \"method\": \"DELETE\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities/search\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Mohamad_Zuelghina/actions/<int:id>/status\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Mohamad_Zuelghina/incidents\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/incidents\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>/assign\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>/notes\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>/status\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Mohamad_Zuelghina/playbooks\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/playbooks\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/playbooks/<int:id>\"\n        },\n        {\n          \"method\": \"DELETE\",\n          \"path\": \"/Mohamad_Zuelghina/playbooks/<int:id>\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Mohamad_Zuelghina/playbooks/<int:id>/actions\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/activity\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/assets\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/incidents\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/summary\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/threats\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/vulnerabilities\"\n        }\n      ],\n      \"role\": \"Admin\"\n    },\n    {\n      \"permissions\": [\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/assets/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/assets/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/logs/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/logs/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/<int:id>\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Hasan_Zuelghina/notifications/<int:id>/read\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/user/<int:user_id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/threats\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/threats/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/threats/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities/<int:id>\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities/search\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Mohamad_Zuelghina/actions/<int:id>/status\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/incidents\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>/notes\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>/status\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/playbooks\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/playbooks/<int:id>\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Mohamad_Zuelghina/playbooks/<int:id>/actions\"\n        }\n      ],\n      \"role\": \"Analyst\"\n    },\n    {\n      \"permissions\": [\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/<int:id>\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Hasan_Zuelghina/notifications/<int:id>/read\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/user/<int:user_id>\"\n        },\n        {\n          \"method\": \"PUT\",\n          \"path\": \"/Khaled_Kanawati/users/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/users/<username>\"\n        },\n        {\n          \"method\": \"POST\",\n          \"path\": \"/Mohamad_Zuelghina/incidents\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/incidents\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>\"\n        }\n      ],\n      \"role\": \"Employee\"\n    },\n    {\n      \"permissions\": [\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/assets\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/assets/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/assets/<int:id>/history\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/assets/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/logs\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/logs/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/logs/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/logs/user/<int:user_id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Hasan_Zuelghina/notifications/user/<int:user_id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/threats\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/threats/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/threats/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/users\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/users/<int:id>/roles\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/users/<username>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/users/roles\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Khaled_Kanawati/vulnerabilities/search\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/incidents\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/playbooks\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/playbooks/<int:id>\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/activity\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/assets\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/incidents\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/summary\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/threats\"\n        },\n        {\n          \"method\": \"GET\",\n          \"path\": \"/Mohamad_Zuelghina/reports/vulnerabilities\"\n        }\n      ],\n      \"role\": \"Auditor\"\n    }\n  ],\n  \"scope\": \"Record ownership and analyst assignment are checked separately.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "View User Roles",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/Khaled_Kanawati/users/{{userId}}/roles",
+            "description": "GET /Khaled_Kanawati/users/{{userId}}/roles. Uses the local SQLite database; errors return status and message."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/6/roles",
+                "description": "GET /Khaled_Kanawati/users/{{userId}}/roles. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1504"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"permissions\": [\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Hasan_Zuelghina/assets/<int:id>\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Hasan_Zuelghina/assets/search\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Hasan_Zuelghina/logs/<int:id>\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Hasan_Zuelghina/logs/search\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Hasan_Zuelghina/notifications/<int:id>\"\n    },\n    {\n      \"method\": \"PUT\",\n      \"path\": \"/Hasan_Zuelghina/notifications/<int:id>/read\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Hasan_Zuelghina/notifications/search\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Hasan_Zuelghina/notifications/user/<int:user_id>\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Khaled_Kanawati/threats\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Khaled_Kanawati/threats/<int:id>\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Khaled_Kanawati/threats/search\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Khaled_Kanawati/vulnerabilities\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Khaled_Kanawati/vulnerabilities/<int:id>\"\n    },\n    {\n      \"method\": \"PUT\",\n      \"path\": \"/Khaled_Kanawati/vulnerabilities/<int:id>\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Khaled_Kanawati/vulnerabilities/search\"\n    },\n    {\n      \"method\": \"PUT\",\n      \"path\": \"/Mohamad_Zuelghina/actions/<int:id>/status\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Mohamad_Zuelghina/incidents\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>\"\n    },\n    {\n      \"method\": \"POST\",\n      \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>/notes\"\n    },\n    {\n      \"method\": \"PUT\",\n      \"path\": \"/Mohamad_Zuelghina/incidents/<int:id>/status\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Mohamad_Zuelghina/playbooks\"\n    },\n    {\n      \"method\": \"GET\",\n      \"path\": \"/Mohamad_Zuelghina/playbooks/<int:id>\"\n    },\n    {\n      \"method\": \"POST\",\n      \"path\": \"/Mohamad_Zuelghina/playbooks/<int:id>/actions\"\n    }\n  ],\n  \"role\": \"Analyst\",\n  \"user_id\": 6\n}"
+            }
           ]
         },
         {
@@ -432,6 +1130,58 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/6/status",
+                "description": "PUT /Khaled_Kanawati/users/{{userId}}/status. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"Inactive\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "221"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:26\",\n  \"department\": \"IT\",\n  \"email\": \"analyst_updated_1005@example.test\",\n  \"full_name\": \"Updated Analyst\",\n  \"id\": 6,\n  \"last_login\": null,\n  \"role\": \"Analyst\",\n  \"status\": \"Inactive\",\n  \"username\": \"new_analyst_1003\"\n}"
             }
           ]
         }
@@ -479,6 +1229,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets",
+                "description": "POST /Hasan_Zuelghina/assets. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"web-01\",\n  \"type\": \"Server\",\n  \"ip_address\": \"10.0.0.10\",\n  \"department\": \"IT\",\n  \"owner_id\": 1,\n  \"criticality\": \"High\",\n  \"status\": \"Active\",\n  \"location\": \"HQ\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "176"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"criticality\": \"High\",\n  \"department\": \"IT\",\n  \"id\": 1,\n  \"ip_address\": \"10.0.0.10\",\n  \"location\": \"HQ\",\n  \"name\": \"web-01\",\n  \"operating_system\": null,\n  \"owner_id\": 1,\n  \"status\": \"Active\",\n  \"type\": \"Server\"\n}"
+            }
           ]
         },
         {
@@ -507,6 +1309,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets",
+                "description": "GET /Hasan_Zuelghina/assets. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "178"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"criticality\": \"High\",\n    \"department\": \"IT\",\n    \"id\": 1,\n    \"ip_address\": \"10.0.0.10\",\n    \"location\": \"HQ\",\n    \"name\": \"web-01\",\n    \"operating_system\": null,\n    \"owner_id\": 1,\n    \"status\": \"Active\",\n    \"type\": \"Server\"\n  }\n]"
             }
           ]
         },
@@ -537,6 +1382,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets/search?name=web&type=Server&ip_address=10.0.0.10&department=IT&criticality=High",
+                "description": "GET /Hasan_Zuelghina/assets/search?name=web&type=Server&ip_address=10.0.0.10&department=IT&criticality=High. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "178"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"criticality\": \"High\",\n    \"department\": \"IT\",\n    \"id\": 1,\n    \"ip_address\": \"10.0.0.10\",\n    \"location\": \"HQ\",\n    \"name\": \"web-01\",\n    \"operating_system\": null,\n    \"owner_id\": 1,\n    \"status\": \"Active\",\n    \"type\": \"Server\"\n  }\n]"
+            }
           ]
         },
         {
@@ -566,6 +1454,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets/1",
+                "description": "GET /Hasan_Zuelghina/assets/{{assetId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "176"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"criticality\": \"High\",\n  \"department\": \"IT\",\n  \"id\": 1,\n  \"ip_address\": \"10.0.0.10\",\n  \"location\": \"HQ\",\n  \"name\": \"web-01\",\n  \"operating_system\": null,\n  \"owner_id\": 1,\n  \"status\": \"Active\",\n  \"type\": \"Server\"\n}"
+            }
           ]
         },
         {
@@ -594,6 +1525,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets/1/history",
+                "description": "GET /Hasan_Zuelghina/assets/{{assetId}}/history. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "176"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"action\": \"create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"assets #1 created\",\n    \"id\": 12,\n    \"service\": \"assets\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  }\n]"
             }
           ]
         },
@@ -632,6 +1606,58 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets/1",
+                "description": "PUT /Hasan_Zuelghina/assets/{{assetId}}. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"criticality\": \"Critical\",\n  \"status\": \"Under Maintenance\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "191"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"criticality\": \"Critical\",\n  \"department\": \"IT\",\n  \"id\": 1,\n  \"ip_address\": \"10.0.0.10\",\n  \"location\": \"HQ\",\n  \"name\": \"web-01\",\n  \"operating_system\": null,\n  \"owner_id\": 1,\n  \"status\": \"Under Maintenance\",\n  \"type\": \"Server\"\n}"
             }
           ]
         }
@@ -679,6 +1705,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/incidents",
+                "description": "POST /Mohamad_Zuelghina/incidents. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Suspicious login\",\n  \"description\": \"Unexpected login attempt\",\n  \"category\": \"Account\",\n  \"severity\": \"High\",\n  \"reporter_id\": 3,\n  \"asset_id\": \"1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "233"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"analyst_id\": null,\n  \"asset_id\": 1,\n  \"category\": \"Account\",\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"description\": \"Unexpected login attempt\",\n  \"id\": 1,\n  \"reporter_id\": 3,\n  \"resolved_at\": null,\n  \"severity\": \"High\",\n  \"status\": \"Open\",\n  \"title\": \"Suspicious login\"\n}"
+            }
           ]
         },
         {
@@ -708,6 +1786,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/incidents",
+                "description": "GET /Mohamad_Zuelghina/incidents. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "235"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"analyst_id\": null,\n    \"asset_id\": 1,\n    \"category\": \"Account\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Unexpected login attempt\",\n    \"id\": 1,\n    \"reporter_id\": 3,\n    \"resolved_at\": null,\n    \"severity\": \"High\",\n    \"status\": \"Open\",\n    \"title\": \"Suspicious login\"\n  }\n]"
+            }
           ]
         },
         {
@@ -736,6 +1857,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/incidents/1",
+                "description": "GET /Mohamad_Zuelghina/incidents/{{incidentId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "244"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"analyst_id\": null,\n  \"asset_id\": 1,\n  \"category\": \"Account\",\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"description\": \"Unexpected login attempt\",\n  \"id\": 1,\n  \"notes\": [],\n  \"reporter_id\": 3,\n  \"resolved_at\": null,\n  \"severity\": \"High\",\n  \"status\": \"Open\",\n  \"title\": \"Suspicious login\"\n}"
             }
           ]
         },
@@ -775,6 +1939,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/incidents/1/assign",
+                "description": "PUT /Mohamad_Zuelghina/incidents/{{incidentId}}/assign. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyst_id\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "241"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"analyst_id\": 2,\n  \"asset_id\": 1,\n  \"category\": \"Account\",\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"description\": \"Unexpected login attempt\",\n  \"id\": 1,\n  \"notes\": [],\n  \"reporter_id\": 3,\n  \"resolved_at\": null,\n  \"severity\": \"High\",\n  \"status\": \"Open\",\n  \"title\": \"Suspicious login\"\n}"
+            }
           ]
         },
         {
@@ -813,6 +2029,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/incidents/1/status",
+                "description": "PUT /Mohamad_Zuelghina/incidents/{{incidentId}}/status. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"Under Investigation\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "256"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"analyst_id\": 2,\n  \"asset_id\": 1,\n  \"category\": \"Account\",\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"description\": \"Unexpected login attempt\",\n  \"id\": 1,\n  \"notes\": [],\n  \"reporter_id\": 3,\n  \"resolved_at\": null,\n  \"severity\": \"High\",\n  \"status\": \"Under Investigation\",\n  \"title\": \"Suspicious login\"\n}"
+            }
           ]
         },
         {
@@ -850,6 +2118,58 @@
                   "pm.test(\"HTTP 201\", () => pm.response.to.have.status(201));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/incidents/1/notes",
+                "description": "POST /Mohamad_Zuelghina/incidents/{{incidentId}}/notes. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content\": \"Reviewed authentication records\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "119"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"analyst_id\": 1,\n  \"content\": \"Reviewed authentication records\",\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"id\": 1,\n  \"incident_id\": 1\n}"
             }
           ]
         }
@@ -897,6 +2217,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/threats",
+                "description": "POST /Khaled_Kanawati/threats. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"Domain\",\n  \"value\": \"scanner-1006.example\",\n  \"description\": \"Known scanner\",\n  \"severity\": \"High\",\n  \"source\": \"SOC\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "154"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"description\": \"Known scanner\",\n  \"id\": 1,\n  \"severity\": \"High\",\n  \"source\": \"SOC\",\n  \"type\": \"Domain\",\n  \"value\": \"scanner-1006.example\"\n}"
+            }
           ]
         },
         {
@@ -925,6 +2297,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/threats",
+                "description": "GET /Khaled_Kanawati/threats. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "156"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Known scanner\",\n    \"id\": 1,\n    \"severity\": \"High\",\n    \"source\": \"SOC\",\n    \"type\": \"Domain\",\n    \"value\": \"scanner-1006.example\"\n  }\n]"
             }
           ]
         },
@@ -955,6 +2370,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/threats/search?type=Domain&severity=High&source=SOC",
+                "description": "GET /Khaled_Kanawati/threats/search?type=Domain&severity=High&source=SOC. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "156"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Known scanner\",\n    \"id\": 1,\n    \"severity\": \"High\",\n    \"source\": \"SOC\",\n    \"type\": \"Domain\",\n    \"value\": \"scanner-1006.example\"\n  }\n]"
+            }
           ]
         },
         {
@@ -983,6 +2441,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/threats/1",
+                "description": "GET /Khaled_Kanawati/threats/{{threatId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "154"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"description\": \"Known scanner\",\n  \"id\": 1,\n  \"severity\": \"High\",\n  \"source\": \"SOC\",\n  \"type\": \"Domain\",\n  \"value\": \"scanner-1006.example\"\n}"
             }
           ]
         },
@@ -1021,6 +2522,58 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/threats/1",
+                "description": "PUT /Khaled_Kanawati/threats/{{threatId}}. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"Confirmed scanner\",\n  \"severity\": \"Critical\",\n  \"source\": \"SOC\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "162"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"description\": \"Confirmed scanner\",\n  \"id\": 1,\n  \"severity\": \"Critical\",\n  \"source\": \"SOC\",\n  \"type\": \"Domain\",\n  \"value\": \"scanner-1006.example\"\n}"
             }
           ]
         }
@@ -1068,6 +2621,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/logs",
+                "description": "POST /Hasan_Zuelghina/logs. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user_id\": 1,\n  \"action\": \"manual_review\",\n  \"description\": \"Reviewed security dashboard\",\n  \"severity\": \"Information\",\n  \"service\": \"reports\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "192"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"action\": \"manual_review\",\n  \"actor_name\": \"admin\",\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"description\": \"Reviewed security dashboard\",\n  \"id\": 21,\n  \"service\": \"reports\",\n  \"severity\": \"Information\",\n  \"user_id\": 1\n}"
+            }
           ]
         },
         {
@@ -1096,6 +2701,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/logs",
+                "description": "GET /Hasan_Zuelghina/logs. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "3800"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"action\": \"manual_review\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Reviewed security dashboard\",\n    \"id\": 21,\n    \"service\": \"reports\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"update\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"threats #1 updated\",\n    \"id\": 20,\n    \"service\": \"threats\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"threats #1 created\",\n    \"id\": 19,\n    \"service\": \"threats\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"note\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Note #1 added to incident #1\",\n    \"id\": 18,\n    \"service\": \"incidents\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"status\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Incident #1: Open to Under Investigation\",\n    \"id\": 17,\n    \"service\": \"incidents\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"notifications #1 created\",\n    \"id\": 16,\n    \"service\": \"notifications\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"assign\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Incident #1 assigned to analyst #2\",\n    \"id\": 15,\n    \"service\": \"incidents\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"incidents #1 created\",\n    \"id\": 14,\n    \"service\": \"incidents\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"update\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"assets #1 updated\",\n    \"id\": 13,\n    \"service\": \"assets\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"assets #1 created\",\n    \"id\": 12,\n    \"service\": \"assets\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"update\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"users #6 updated\",\n    \"id\": 11,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"role_change\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"User #6 assigned Analyst\",\n    \"id\": 10,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"update\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"users #6 updated\",\n    \"id\": 9,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"update\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"users #6 updated\",\n    \"id\": 8,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"login_success\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"Successful login\",\n    \"id\": 7,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"user_create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"User #6 created\",\n    \"id\": 6,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"user_create\",\n    \"actor_name\": \"new_employee_1001\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"User #5 created\",\n    \"id\": 5,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 5\n  },\n  {\n    \"action\": \"login_success\",\n    \"actor_name\": \"auditor\",\n    \"created_at\": \"2026-10-18 18:12:25\",\n    \"description\": \"Successful login\",\n    \"id\": 4,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 4\n  },\n  {\n    \"action\": \"login_success\",\n    \"actor_name\": \"employee\",\n    \"created_at\": \"2026-10-18 18:12:25\",\n    \"description\": \"Successful login\",\n    \"id\": 3,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 3\n  },\n  {\n    \"action\": \"login_success\",\n    \"actor_name\": \"analyst\",\n    \"created_at\": \"2026-10-18 18:12:25\",\n    \"description\": \"Successful login\",\n    \"id\": 2,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 2\n  },\n  {\n    \"action\": \"login_success\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:25\",\n    \"description\": \"Successful login\",\n    \"id\": 1,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  }\n]"
             }
           ]
         },
@@ -1126,6 +2774,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/logs/search?user_id=1&severity=Information&service=reports",
+                "description": "GET /Hasan_Zuelghina/logs/search?user_id={{adminId}}&severity=Information&service=reports. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "194"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"action\": \"manual_review\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Reviewed security dashboard\",\n    \"id\": 21,\n    \"service\": \"reports\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  }\n]"
+            }
           ]
         },
         {
@@ -1155,6 +2846,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/logs/user/1",
+                "description": "GET /Hasan_Zuelghina/logs/user/{{adminId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "3072"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"action\": \"manual_review\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Reviewed security dashboard\",\n    \"id\": 21,\n    \"service\": \"reports\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"update\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"threats #1 updated\",\n    \"id\": 20,\n    \"service\": \"threats\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"threats #1 created\",\n    \"id\": 19,\n    \"service\": \"threats\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"note\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Note #1 added to incident #1\",\n    \"id\": 18,\n    \"service\": \"incidents\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"status\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Incident #1: Open to Under Investigation\",\n    \"id\": 17,\n    \"service\": \"incidents\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"notifications #1 created\",\n    \"id\": 16,\n    \"service\": \"notifications\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"assign\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"Incident #1 assigned to analyst #2\",\n    \"id\": 15,\n    \"service\": \"incidents\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"incidents #1 created\",\n    \"id\": 14,\n    \"service\": \"incidents\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"update\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"assets #1 updated\",\n    \"id\": 13,\n    \"service\": \"assets\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"assets #1 created\",\n    \"id\": 12,\n    \"service\": \"assets\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"update\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"description\": \"users #6 updated\",\n    \"id\": 11,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"role_change\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"User #6 assigned Analyst\",\n    \"id\": 10,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"update\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"users #6 updated\",\n    \"id\": 9,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"update\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"users #6 updated\",\n    \"id\": 8,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"login_success\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"Successful login\",\n    \"id\": 7,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"user_create\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:26\",\n    \"description\": \"User #6 created\",\n    \"id\": 6,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  },\n  {\n    \"action\": \"login_success\",\n    \"actor_name\": \"admin\",\n    \"created_at\": \"2026-10-18 18:12:25\",\n    \"description\": \"Successful login\",\n    \"id\": 1,\n    \"service\": \"users\",\n    \"severity\": \"Information\",\n    \"user_id\": 1\n  }\n]"
+            }
           ]
         },
         {
@@ -1183,6 +2917,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/logs/21",
+                "description": "GET /Hasan_Zuelghina/logs/{{logId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "192"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"action\": \"manual_review\",\n  \"actor_name\": \"admin\",\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"description\": \"Reviewed security dashboard\",\n  \"id\": 21,\n  \"service\": \"reports\",\n  \"severity\": \"Information\",\n  \"user_id\": 1\n}"
             }
           ]
         }
@@ -1218,6 +2995,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/reports/summary",
+                "description": "GET /Mohamad_Zuelghina/reports/summary. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1033"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"assets\": 1,\n  \"critical_threats\": 1,\n  \"open_incidents\": 0,\n  \"recent_activity\": [\n    {\n      \"action\": \"manual_review\",\n      \"actor_name\": \"admin\",\n      \"created_at\": \"2026-10-18 18:12:27\",\n      \"description\": \"Reviewed security dashboard\",\n      \"id\": 21,\n      \"service\": \"reports\",\n      \"severity\": \"Information\",\n      \"user_id\": 1\n    },\n    {\n      \"action\": \"update\",\n      \"actor_name\": \"admin\",\n      \"created_at\": \"2026-10-18 18:12:27\",\n      \"description\": \"threats #1 updated\",\n      \"id\": 20,\n      \"service\": \"threats\",\n      \"severity\": \"Information\",\n      \"user_id\": 1\n    },\n    {\n      \"action\": \"create\",\n      \"actor_name\": \"admin\",\n      \"created_at\": \"2026-10-18 18:12:27\",\n      \"description\": \"threats #1 created\",\n      \"id\": 19,\n      \"service\": \"threats\",\n      \"severity\": \"Information\",\n      \"user_id\": 1\n    },\n    {\n      \"action\": \"note\",\n      \"actor_name\": \"admin\",\n      \"created_at\": \"2026-10-18 18:12:27\",\n      \"description\": \"Note #1 added to incident #1\",\n      \"id\": 18,\n      \"service\": \"incidents\",\n      \"severity\": \"Information\",\n      \"user_id\": 1\n    },\n    {\n      \"action\": \"status\",\n      \"actor_name\": \"admin\",\n      \"created_at\": \"2026-10-18 18:12:27\",\n      \"description\": \"Incident #1: Open to Under Investigation\",\n      \"id\": 17,\n      \"service\": \"incidents\",\n      \"severity\": \"Information\",\n      \"user_id\": 1\n    }\n  ],\n  \"users\": 6,\n  \"vulnerabilities\": 0\n}"
+            }
           ]
         },
         {
@@ -1246,6 +3066,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/reports/incidents",
+                "description": "GET /Mohamad_Zuelghina/reports/incidents. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "75"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"by_severity\": {\n    \"High\": 1\n  },\n  \"by_status\": {\n    \"Under Investigation\": 1\n  },\n  \"total\": 1\n}"
             }
           ]
         },
@@ -1276,6 +3139,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/reports/assets",
+                "description": "GET /Mohamad_Zuelghina/reports/assets. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "48"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"by_type\": {\n    \"Server\": 1\n  },\n  \"critical\": 1,\n  \"total\": 1\n}"
+            }
           ]
         },
         {
@@ -1304,6 +3210,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/reports/threats",
+                "description": "GET /Mohamad_Zuelghina/reports/threats. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "237"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"by_severity\": {\n    \"Critical\": 1\n  },\n  \"by_type\": {\n    \"Domain\": 1\n  },\n  \"recent\": [\n    {\n      \"created_at\": \"2026-10-18 18:12:27\",\n      \"description\": \"Confirmed scanner\",\n      \"id\": 1,\n      \"severity\": \"Critical\",\n      \"source\": \"SOC\",\n      \"type\": \"Domain\",\n      \"value\": \"scanner-1006.example\"\n    }\n  ],\n  \"total\": 1\n}"
             }
           ]
         },
@@ -1334,6 +3283,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/reports/vulnerabilities",
+                "description": "GET /Mohamad_Zuelghina/reports/vulnerabilities. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "57"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"by_severity\": {},\n  \"by_status\": {},\n  \"critical\": 0,\n  \"total\": 0\n}"
+            }
           ]
         },
         {
@@ -1362,6 +3354,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/reports/activity",
+                "description": "GET /Mohamad_Zuelghina/reports/activity. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "185"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"by_action\": {\n    \"assign\": 1,\n    \"create\": 4,\n    \"login_success\": 5,\n    \"manual_review\": 1,\n    \"note\": 1,\n    \"role_change\": 1,\n    \"status\": 1,\n    \"update\": 5,\n    \"user_create\": 2\n  },\n  \"failed_logins\": 0,\n  \"login_attempts\": 5,\n  \"total\": 21\n}"
             }
           ]
         }
@@ -1409,6 +3444,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/vulnerabilities",
+                "description": "POST /Khaled_Kanawati/vulnerabilities. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Unpatched service\",\n  \"description\": \"Update package\",\n  \"cve\": \"CVE-2025-1234\",\n  \"cvss\": 8.2,\n  \"severity\": \"High\",\n  \"asset_id\": \"1\",\n  \"source\": \"Scanner\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "221"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"asset_id\": 1,\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"cve\": \"CVE-2025-1234\",\n  \"cvss\": 8.2,\n  \"description\": \"Update package\",\n  \"id\": 1,\n  \"resolved_at\": null,\n  \"severity\": \"High\",\n  \"source\": \"Scanner\",\n  \"status\": \"Open\",\n  \"title\": \"Unpatched service\"\n}"
+            }
           ]
         },
         {
@@ -1437,6 +3524,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/vulnerabilities",
+                "description": "GET /Khaled_Kanawati/vulnerabilities. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "223"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"asset_id\": 1,\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"cve\": \"CVE-2025-1234\",\n    \"cvss\": 8.2,\n    \"description\": \"Update package\",\n    \"id\": 1,\n    \"resolved_at\": null,\n    \"severity\": \"High\",\n    \"source\": \"Scanner\",\n    \"status\": \"Open\",\n    \"title\": \"Unpatched service\"\n  }\n]"
             }
           ]
         },
@@ -1467,6 +3597,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/vulnerabilities/search?cve=CVE-2025-1234&severity=High&asset_id=1&status=Open",
+                "description": "GET /Khaled_Kanawati/vulnerabilities/search?cve=CVE-2025-1234&severity=High&asset_id={{assetId}}&status=Open. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "223"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"asset_id\": 1,\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"cve\": \"CVE-2025-1234\",\n    \"cvss\": 8.2,\n    \"description\": \"Update package\",\n    \"id\": 1,\n    \"resolved_at\": null,\n    \"severity\": \"High\",\n    \"source\": \"Scanner\",\n    \"status\": \"Open\",\n    \"title\": \"Unpatched service\"\n  }\n]"
+            }
           ]
         },
         {
@@ -1495,6 +3668,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/vulnerabilities/1",
+                "description": "GET /Khaled_Kanawati/vulnerabilities/{{vulnerabilityId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "221"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"asset_id\": 1,\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"cve\": \"CVE-2025-1234\",\n  \"cvss\": 8.2,\n  \"description\": \"Update package\",\n  \"id\": 1,\n  \"resolved_at\": null,\n  \"severity\": \"High\",\n  \"source\": \"Scanner\",\n  \"status\": \"Open\",\n  \"title\": \"Unpatched service\"\n}"
             }
           ]
         },
@@ -1533,6 +3749,58 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/vulnerabilities/1",
+                "description": "PUT /Khaled_Kanawati/vulnerabilities/{{vulnerabilityId}}. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"Under Investigation\",\n  \"description\": \"Assigned for review\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "241"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"asset_id\": 1,\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"cve\": \"CVE-2025-1234\",\n  \"cvss\": 8.2,\n  \"description\": \"Assigned for review\",\n  \"id\": 1,\n  \"resolved_at\": null,\n  \"severity\": \"High\",\n  \"source\": \"Scanner\",\n  \"status\": \"Under Investigation\",\n  \"title\": \"Unpatched service\"\n}"
             }
           ]
         }
@@ -1580,6 +3848,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/notifications",
+                "description": "POST /Hasan_Zuelghina/notifications. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user_id\": 3,\n  \"title\": \"Security update\",\n  \"message\": \"Review your device\",\n  \"type\": \"Security Alert\",\n  \"severity\": \"Medium\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "190"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"id\": 2,\n  \"message\": \"Review your device\",\n  \"read_at\": null,\n  \"severity\": \"Medium\",\n  \"status\": \"Unread\",\n  \"title\": \"Security update\",\n  \"type\": \"Security Alert\",\n  \"user_id\": 3\n}"
+            }
           ]
         },
         {
@@ -1608,6 +3928,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/notifications/user/3",
+                "description": "GET /Hasan_Zuelghina/notifications/user/{{employeeId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "192"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"id\": 2,\n    \"message\": \"Review your device\",\n    \"read_at\": null,\n    \"severity\": \"Medium\",\n    \"status\": \"Unread\",\n    \"title\": \"Security update\",\n    \"type\": \"Security Alert\",\n    \"user_id\": 3\n  }\n]"
             }
           ]
         },
@@ -1638,6 +4001,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/notifications/search?user_id=3&type=Security%20Alert&severity=Medium&status=Unread",
+                "description": "GET /Hasan_Zuelghina/notifications/search?user_id={{employeeId}}&type=Security%20Alert&severity=Medium&status=Unread. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "192"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"created_at\": \"2026-10-18 18:12:27\",\n    \"id\": 2,\n    \"message\": \"Review your device\",\n    \"read_at\": null,\n    \"severity\": \"Medium\",\n    \"status\": \"Unread\",\n    \"title\": \"Security update\",\n    \"type\": \"Security Alert\",\n    \"user_id\": 3\n  }\n]"
+            }
           ]
         },
         {
@@ -1667,6 +4073,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/notifications/2",
+                "description": "GET /Hasan_Zuelghina/notifications/{{notificationId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "190"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"id\": 2,\n  \"message\": \"Review your device\",\n  \"read_at\": null,\n  \"severity\": \"Medium\",\n  \"status\": \"Unread\",\n  \"title\": \"Security update\",\n  \"type\": \"Security Alert\",\n  \"user_id\": 3\n}"
+            }
           ]
         },
         {
@@ -1695,6 +4144,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/notifications/2/read",
+                "description": "PUT /Hasan_Zuelghina/notifications/{{notificationId}}/read. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "205"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:27\",\n  \"id\": 2,\n  \"message\": \"Review your device\",\n  \"read_at\": \"2026-10-18 18:12:28\",\n  \"severity\": \"Medium\",\n  \"status\": \"Read\",\n  \"title\": \"Security update\",\n  \"type\": \"Security Alert\",\n  \"user_id\": 3\n}"
             }
           ]
         }
@@ -1742,6 +4234,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/playbooks",
+                "description": "POST /Mohamad_Zuelghina/playbooks. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Account compromise\",\n  \"description\": \"Contain affected account\",\n  \"category\": \"Account\",\n  \"severity\": \"High\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "167"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"category\": \"Account\",\n  \"created_at\": \"2026-10-18 18:12:28\",\n  \"created_by\": 1,\n  \"description\": \"Contain affected account\",\n  \"id\": 1,\n  \"name\": \"Account compromise\",\n  \"severity\": \"High\"\n}"
+            }
           ]
         },
         {
@@ -1771,6 +4315,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/playbooks",
+                "description": "GET /Mohamad_Zuelghina/playbooks. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "169"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"category\": \"Account\",\n    \"created_at\": \"2026-10-18 18:12:28\",\n    \"created_by\": 1,\n    \"description\": \"Contain affected account\",\n    \"id\": 1,\n    \"name\": \"Account compromise\",\n    \"severity\": \"High\"\n  }\n]"
+            }
           ]
         },
         {
@@ -1799,6 +4386,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/playbooks/1",
+                "description": "GET /Mohamad_Zuelghina/playbooks/{{playbookId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "180"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"actions\": [],\n  \"category\": \"Account\",\n  \"created_at\": \"2026-10-18 18:12:28\",\n  \"created_by\": 1,\n  \"description\": \"Contain affected account\",\n  \"id\": 1,\n  \"name\": \"Account compromise\",\n  \"severity\": \"High\"\n}"
             }
           ]
         },
@@ -1841,6 +4471,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/playbooks/1/actions",
+                "description": "POST /Mohamad_Zuelghina/playbooks/{{playbookId}}/actions. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"Disable account\",\n  \"step_no\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "132"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"assigned_user_id\": null,\n  \"completed_at\": null,\n  \"description\": \"Disable account\",\n  \"id\": 1,\n  \"playbook_id\": 1,\n  \"status\": \"Pending\",\n  \"step_no\": 1\n}"
+            }
           ]
         },
         {
@@ -1879,6 +4561,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/actions/1/status",
+                "description": "PUT /Mohamad_Zuelghina/actions/{{actionId}}/status. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"In Progress\",\n  \"assigned_user_id\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "239"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"assigned_user_id\": 2,\n  \"completed_at\": null,\n  \"description\": \"Disable account\",\n  \"history\": [\n    {\n      \"action_id\": 1,\n      \"actor_id\": 1,\n      \"changed_at\": \"2026-10-18 18:12:28\",\n      \"id\": 1,\n      \"status\": \"In Progress\"\n    }\n  ],\n  \"id\": 1,\n  \"playbook_id\": 1,\n  \"status\": \"In Progress\",\n  \"step_no\": 1\n}"
+            }
           ]
         }
       ]
@@ -1913,6 +4647,49 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 403",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets",
+                "description": "Expected 403; screenshot this response and the request headers."
+              },
+              "status": "403",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "87"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"User does not have permission to perform this operation\",\n  \"status\": \"error\"\n}"
+            }
           ]
         },
         {
@@ -1941,6 +4718,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets",
+                "description": "Expected 200; compare with the denied request."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "193"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"criticality\": \"Critical\",\n    \"department\": \"IT\",\n    \"id\": 1,\n    \"ip_address\": \"10.0.0.10\",\n    \"location\": \"HQ\",\n    \"name\": \"web-01\",\n    \"operating_system\": null,\n    \"owner_id\": 1,\n    \"status\": \"Under Maintenance\",\n    \"type\": \"Server\"\n  }\n]"
             }
           ]
         },
@@ -1980,6 +4800,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 400",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets",
+                "description": "Expected 400 validation error.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"web-01\",\n  \"type\": \"Server\",\n  \"ip_address\": \"invalid\",\n  \"department\": \"IT\",\n  \"owner_id\": 1,\n  \"criticality\": \"High\",\n  \"status\": \"Active\",\n  \"location\": \"HQ\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "400",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "50"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Invalid IP address\",\n  \"status\": \"error\"\n}"
+            }
           ]
         },
         {
@@ -2018,6 +4890,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 400",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/incidents/1/status",
+                "description": "Expected 400 for a skipped lifecycle state.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"Closed\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "400",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "92"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Invalid status transition from Under Investigation to Closed\",\n  \"status\": \"error\"\n}"
+            }
           ]
         },
         {
@@ -2052,6 +4976,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 401",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/login",
+                "description": "Expected 401 and a failed-login audit record.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"incorrect\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "401",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "71"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Invalid credentials or inactive account\",\n  \"status\": \"error\"\n}"
+            }
           ]
         },
         {
@@ -2080,6 +5056,49 @@
                   "pm.test(\"HTTP 404\", () => pm.response.to.have.status(404));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 404",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets/999999",
+                "description": "Expected 404."
+              },
+              "status": "404",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Asset not found\",\n  \"status\": \"error\"\n}"
             }
           ]
         }
@@ -2127,6 +5146,130 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users",
+                "description": "POST /Khaled_Kanawati/users. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"full_name\": \"Temporary User\",\n  \"username\": \"delete_user_1007\",\n  \"email\": \"delete_user_1008@example.test\",\n  \"password\": \"DemoPass123!\",\n  \"department\": \"IT\",\n  \"role\": \"Employee\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "215"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:28\",\n  \"department\": \"IT\",\n  \"email\": \"delete_user_1008@example.test\",\n  \"full_name\": \"Temporary User\",\n  \"id\": 7,\n  \"last_login\": null,\n  \"role\": \"Employee\",\n  \"status\": \"Active\",\n  \"username\": \"delete_user_1007\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Revoke user role",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/Khaled_Kanawati/users/{{deleteUserId}}/role",
+            "description": "Admin revokes an elevated role; the account retains base Employee access."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/7/role",
+                "description": "Admin revokes an elevated role; the account retains base Employee access."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "215"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:28\",\n  \"department\": \"IT\",\n  \"email\": \"delete_user_1008@example.test\",\n  \"full_name\": \"Temporary User\",\n  \"id\": 7,\n  \"last_login\": null,\n  \"role\": \"Employee\",\n  \"status\": \"Active\",\n  \"username\": \"delete_user_1007\"\n}"
+            }
           ]
         },
         {
@@ -2155,6 +5298,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/users/7",
+                "description": "DELETE /Khaled_Kanawati/users/{{deleteUserId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "27"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"User deleted\"\n}"
             }
           ]
         },
@@ -2197,6 +5383,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets",
+                "description": "POST /Hasan_Zuelghina/assets. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"temporary-asset\",\n  \"type\": \"Server\",\n  \"ip_address\": \"10.0.0.201\",\n  \"department\": \"IT\",\n  \"owner_id\": 1,\n  \"criticality\": \"High\",\n  \"status\": \"Active\",\n  \"location\": \"HQ\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "186"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"criticality\": \"High\",\n  \"department\": \"IT\",\n  \"id\": 2,\n  \"ip_address\": \"10.0.0.201\",\n  \"location\": \"HQ\",\n  \"name\": \"temporary-asset\",\n  \"operating_system\": null,\n  \"owner_id\": 1,\n  \"status\": \"Active\",\n  \"type\": \"Server\"\n}"
+            }
           ]
         },
         {
@@ -2225,6 +5463,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/assets/2",
+                "description": "DELETE /Hasan_Zuelghina/assets/{{deleteAssetId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "28"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Asset deleted\"\n}"
             }
           ]
         },
@@ -2267,6 +5548,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/threats",
+                "description": "POST /Khaled_Kanawati/threats. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"Domain\",\n  \"value\": \"delete-1009.example\",\n  \"description\": \"Known scanner\",\n  \"severity\": \"High\",\n  \"source\": \"SOC\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "153"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:28\",\n  \"description\": \"Known scanner\",\n  \"id\": 2,\n  \"severity\": \"High\",\n  \"source\": \"SOC\",\n  \"type\": \"Domain\",\n  \"value\": \"delete-1009.example\"\n}"
+            }
           ]
         },
         {
@@ -2295,6 +5628,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/threats/2",
+                "description": "DELETE /Khaled_Kanawati/threats/{{deleteThreatId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:29 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "29"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Threat deleted\"\n}"
             }
           ]
         },
@@ -2337,6 +5713,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/logs",
+                "description": "POST /Hasan_Zuelghina/logs. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user_id\": 1,\n  \"action\": \"manual_review\",\n  \"description\": \"Reviewed security dashboard\",\n  \"severity\": \"Information\",\n  \"service\": \"reports\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:29 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "192"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"action\": \"manual_review\",\n  \"actor_name\": \"admin\",\n  \"created_at\": \"2026-10-18 18:12:29\",\n  \"description\": \"Reviewed security dashboard\",\n  \"id\": 38,\n  \"service\": \"reports\",\n  \"severity\": \"Information\",\n  \"user_id\": 1\n}"
+            }
           ]
         },
         {
@@ -2365,6 +5793,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/logs/38",
+                "description": "DELETE /Hasan_Zuelghina/logs/{{deleteLogId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:29 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "26"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Log deleted\"\n}"
             }
           ]
         },
@@ -2407,6 +5878,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/vulnerabilities",
+                "description": "POST /Khaled_Kanawati/vulnerabilities. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Unpatched service\",\n  \"description\": \"Update package\",\n  \"cve\": \"CVE-2025-1234\",\n  \"cvss\": 8.2,\n  \"severity\": \"High\",\n  \"asset_id\": \"1\",\n  \"source\": \"Scanner\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:29 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "221"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"asset_id\": 1,\n  \"created_at\": \"2026-10-18 18:12:29\",\n  \"cve\": \"CVE-2025-1234\",\n  \"cvss\": 8.2,\n  \"description\": \"Update package\",\n  \"id\": 2,\n  \"resolved_at\": null,\n  \"severity\": \"High\",\n  \"source\": \"Scanner\",\n  \"status\": \"Open\",\n  \"title\": \"Unpatched service\"\n}"
+            }
           ]
         },
         {
@@ -2435,6 +5958,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Khaled_Kanawati/vulnerabilities/2",
+                "description": "DELETE /Khaled_Kanawati/vulnerabilities/{{deleteVulnerabilityId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:29 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "37"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Vulnerabilitie deleted\"\n}"
             }
           ]
         },
@@ -2477,6 +6043,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/notifications",
+                "description": "POST /Hasan_Zuelghina/notifications. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"user_id\": 3,\n  \"title\": \"Security update\",\n  \"message\": \"Review your device\",\n  \"type\": \"Security Alert\",\n  \"severity\": \"Medium\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:29 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "190"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"created_at\": \"2026-10-18 18:12:29\",\n  \"id\": 3,\n  \"message\": \"Review your device\",\n  \"read_at\": null,\n  \"severity\": \"Medium\",\n  \"status\": \"Unread\",\n  \"title\": \"Security update\",\n  \"type\": \"Security Alert\",\n  \"user_id\": 3\n}"
+            }
           ]
         },
         {
@@ -2505,6 +6123,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Hasan_Zuelghina/notifications/3",
+                "description": "DELETE /Hasan_Zuelghina/notifications/{{deleteNotificationId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:29 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "35"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Notification deleted\"\n}"
             }
           ]
         },
@@ -2547,6 +6208,58 @@
                 ]
               }
             }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/playbooks",
+                "description": "POST /Mohamad_Zuelghina/playbooks. Uses the local SQLite database; errors return status and message.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Account compromise\",\n  \"description\": \"Contain affected account\",\n  \"category\": \"Account\",\n  \"severity\": \"High\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "201",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:29 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "167"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"category\": \"Account\",\n  \"created_at\": \"2026-10-18 18:12:29\",\n  \"created_by\": 1,\n  \"description\": \"Contain affected account\",\n  \"id\": 2,\n  \"name\": \"Account compromise\",\n  \"severity\": \"High\"\n}"
+            }
           ]
         },
         {
@@ -2575,6 +6288,49 @@
                   "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));"
                 ]
               }
+            }
+          ],
+          "response": [
+            {
+              "name": "Recorded local execution 200",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "http://127.0.0.1:5400/Mohamad_Zuelghina/playbooks/2",
+                "description": "DELETE /Mohamad_Zuelghina/playbooks/{{deletePlaybookId}}. Uses the local SQLite database; errors return status and message."
+              },
+              "status": "200",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.9 Python/3.12.14"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 18 Oct 2026 18:12:29 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "31"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"Playbook deleted\"\n}"
             }
           ]
         }
