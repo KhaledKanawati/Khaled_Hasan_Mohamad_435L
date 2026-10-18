@@ -81,6 +81,37 @@ def register(app):
         audit('role_change', f'User #{id} assigned {d["role"]}', service='users')
         return public_user(result)
 
+    def permissions(role):
+        # Read the route guards so the permission list follows the implementation.
+        return [{'method': method, 'path': rule.rule}
+                for rule in sorted(app.url_map.iter_rules(), key=lambda rule: rule.rule)
+                if role in getattr(app.view_functions[rule.endpoint], 'allowed_roles', ())
+                for method in sorted(rule.methods & {'GET', 'POST', 'PUT', 'DELETE'})]
+
+    @route(K + '/users/roles', methods=['GET'])
+    @auth(ADMIN, AUDITOR)
+    def roles_and_permissions():
+        return {'roles': [{'role': role, 'permissions': permissions(role)}
+                          for role in (ADMIN, ANALYST, EMPLOYEE, AUDITOR)],
+                'scope': 'Record ownership and analyst assignment are checked separately.'}
+
+    @route(K + '/users/<int:id>/roles', methods=['GET'])
+    @auth(ADMIN, AUDITOR)
+    def view_user_roles(id):
+        user = ref('users', id)
+        return {'user_id': id, 'role': user['role'], 'permissions': permissions(user['role'])}
+
+    @route(K + '/users/<int:id>/role', methods=['DELETE'])
+    @auth(ADMIN)
+    def remove_user_role(id):
+        user = ref('users', id)
+        if g.user['id'] == id:
+            fail(400, 'Administrator cannot revoke own role')
+        # Every account keeps the base Employee role after elevated access is revoked.
+        run('UPDATE users SET role=? WHERE id=?', (EMPLOYEE, id))
+        audit('role_revoke', f'User #{id}: {user["role"]} revoked; Employee access retained', service='users')
+        return public_user(ref('users', id))
+
     @route(K + '/users/<int:id>/status', methods=['PUT'])
     @auth(ADMIN)
     def user_status(id):

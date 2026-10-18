@@ -137,6 +137,8 @@ def main():
             samples['create_playbook'], save='deletePlaybookId'),
         req('Delete playbook', 'DELETE', '/Mohamad_Zuelghina/playbooks/{{deletePlaybookId}}'),
     ]
+    cleanup.insert(1, req('Revoke user role', 'DELETE', '/Khaled_Kanawati/users/{{deleteUserId}}/role',
+        note='Admin revokes an elevated role; the account retains base Employee access.'))
     folders = [{'name':'0 Login','item':auth_items}]
     for i, (name, owner, key) in enumerate(groups, 1):
         folders.append({'name':f'{i} {name} ({owner.replace("_", " ")})', 'item':folder_map[key]})
